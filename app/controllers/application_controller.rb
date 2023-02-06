@@ -14,22 +14,22 @@ class ApplicationController < ActionController::API
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
       
-      def login!(user)
+    def login!(user)
         session[:session_token] = user.reset_session_token! 
         @current_user = user
-      end
+    end
       
-      def logout!
+    def logout!
         current_user.reset_session_token!
         session[:session_token] = nil
         @current_user = nil 
-      end
+    end
       
-      def require_logged_in
+    def require_logged_in
         unless current_user
           render json: { message: 'Unauthorized' }, status: :unauthorized 
         end
-      end
+    end
 
 
     private
