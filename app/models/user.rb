@@ -22,15 +22,21 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   def self.find_by_credentials(credential, password)
+    debugger
     if URI::MailTo::EMAIL_REGEXP.match?(credential)
-      user = User.find_by(email: credential)
+      person = User.find_by(email: credential)
     # else
     #   user = User.find_by(username: credential) for future implementation
     end 
 
-    if user&.authenticate(password)
-      return user
+    
+    testing = person&.authenticate(password)
+    
+    if person&.authenticate(password)
+      
+      return person
     else
+      debugger
       nil
     end 
   end
