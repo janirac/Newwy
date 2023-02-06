@@ -37,13 +37,16 @@ function LoginFormPage() {
         {errors.map(error => <li key={error}>{error}</li>)}
       </ul>
       <label>
-       Email
         <input
-          type="text" 
+          className='email-input'
+          type="text" //should I put email or text
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required //optional
         />
+        <div>
+          Email*
+        </div>
       </label>
       <label>
         Password
@@ -54,7 +57,7 @@ function LoginFormPage() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
+      <button type="submit">Sign In</button>
     </form>
   );
 }

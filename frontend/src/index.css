@@ -1,1 +1,9 @@
 /* TODO Add site wide styles */
+input {
+    font-family: Sharp Grotesk\ 20,sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: .4px;
+    line-height: 24px;
+    text-transform: none;
+}

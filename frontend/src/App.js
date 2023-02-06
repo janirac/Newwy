@@ -9,7 +9,7 @@ function App() {
     <>
       <Navigation />
         <Switch>
-          <Route path="/login">
+          <Route path="/thrift/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">

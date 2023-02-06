@@ -1,0 +1,17 @@
+.navigation-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.logo-image {
+    width: 100px;
+}
+
+.user-links {
+    position: relative;
+}
+
+.user-logo-link:hover {
+    cursor: pointer;
+}

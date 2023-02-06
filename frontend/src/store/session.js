@@ -34,7 +34,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
-    return response;
+    // return response;
   };
 
   export const signup = ({ email, password }) => async (dispatch) => {

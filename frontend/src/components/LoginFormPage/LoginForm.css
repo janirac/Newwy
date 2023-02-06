@@ -1,17 +1,14 @@
-/* .login-page {
-    width: 50%;
-    margin: auto;
-    margin-top: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .login-page h1 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  } */
+.email-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  color: #2c2c2c;
+  height: 20px;
+  width: 50%;
+}
 
-  /* testing css code for this */
+.email-input:focus {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
