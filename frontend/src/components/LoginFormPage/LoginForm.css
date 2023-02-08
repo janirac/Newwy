@@ -1,14 +1,142 @@
+.login-page-main {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  flex-direction: column;
+  width: 650px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.img-login {
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-input-section {
+  width: 100%;
+  position: relative;
+}
+
+input:focus ~ .email-input-text,
+input:not(:focus):valid ~ .email-input-text{
+  /* top: 8px;
+  bottom: 10px;
+  left: 20px; */
+  bottom: 60px;
+  font-size: 11px;
+  opacity: 1;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* .email-input {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+} */
 .email-input {
-  background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
   color: #2c2c2c;
-  height: 20px;
-  width: 50%;
+  height: 30px;
+  width: 100%; 
+  background-color: transparent;
+  margin-bottom: 30px;
 }
 
-.email-input:focus {
+.email-input-text {
+  position: absolute;
+  pointer-events: none;
+  color: #747176;
+  /* left: 20px;
+  top: 18px; */
+  bottom: 39px;
+  transition: 0.2s ease all;
+  margin-left: 3px;
+}
+
+
+/* .email-input:focus {
   border: none;
   border-bottom: 1px solid black;
   outline: none;
 }
+
+.email-input-text {
+  transform: translateY(-24px);
+  transition: all .18s ease-out;
+  will-change: transform,color,font-size;
+} */
+
+.password-input-section {
+  width: 100%;
+  position: relative;
+}
+
+.password-input {
+  border: none;
+  border-bottom: 1px solid black;
+  color: #2c2c2c;
+  height: 30px;
+  width: 100%; 
+  background-color: transparent;
+  margin-bottom: 40px;
+}
+
+input:focus:placeholder{
+  color: transparent;
+}
+
+.password-input-text {
+  position: absolute;
+  pointer-events: none;
+  bottom: 50px;
+}
+
+.submit-btn {
+  background-color: #785028;
+  color: #fff;
+  padding: 4px 48px;
+  font-family: sans-serif;
+  border: #785028;
+  height: 40px;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+.footer-text {
+  font-size: 15px;
+  font-weight: 400px;
+  letter-spacing: .3px;
+  color: rgb(108, 108, 108);
+}
+
+.join-now-btn {
+  font-size: 15px;
+  cursor: pointer;
+  color: #785028;
+}
+
+.text-one-login {
+  font-weight: 800;
+  font-size: 20px;
+  color: black;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+
+}
+/* .email-input-section {
+  
+} */
+
+

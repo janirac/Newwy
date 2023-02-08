@@ -9,11 +9,14 @@ function App() {
     <>
       <Navigation />
         <Switch>
-          <Route path="/thrift/login">
+          <Route path="/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path='/signout'>
+            
           </Route>
         </Switch>
     </>

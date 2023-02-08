@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import './LoginForm.css'
 
 function LoginFormPage() {
@@ -10,6 +10,7 @@ function LoginFormPage() {
   const [credential, setCredential] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+  const [emailClick, setEmailClick] = useState(false)
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -31,34 +32,62 @@ function LoginFormPage() {
       });
   }
 
+  let emailInputClassName = "email-input-section"
+
+  const setClickedInput = (e) => {
+    if (emailClick){
+      emailInputClassName = "email-input-section-focus"
+    } else {
+      emailInputClassName = "email-input-section"
+    }
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>
-        <input
-          className='email-input'
-          type="text" //should I put email or text
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required //optional
-        />
-        <div>
-          Email*
+    <div className='login-page-main'>
+     <img className='img-login' src="https://via.placeholder.com/100"/>
+        <h3 className='text-one-login'>
+        Already Have an Account?
+        </h3>
+      <form className='login-form' onSubmit={handleSubmit}>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <div className="email-input-section">
+          <input
+            // onClick={setClickedInput}
+            className='email-input'
+            type="text" //should I put email or text
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required //optional
+          />
+          <div className='email-input-text'>
+            Email*
+          </div>
         </div>
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Sign In</button>
-    </form>
+        <div className='password-input-section'>
+          <input
+          className='password-input'
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            placeholder='Password*'
+          />
+          {/* <div className='password-input-text'>
+            Password*
+          </div> */}
+        </div>
+        <button className='submit-btn' type="submit">Sign In</button>
+      </form>
+      <div>
+        <text className='footer-text'>Don't have a Newwy account yet?      
+          <NavLink to="/signup" value='Join Now'>
+              <text className='join-now-btn'>   Join Now</text>
+          </NavLink>
+        </text>
+      </div>
+    </div>
   );
 }
 

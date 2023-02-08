@@ -1,17 +1,96 @@
 .navigation-bar {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 50px;
 }
 
 .logo-image {
-    width: 100px;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #785028;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 8px;
+    width: 300px;
+    height: 200px;
+    right: 0px;
+    background-color: #ffff;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-dropdown {
+    margin-bottom: 15px;
+    height: 60px;
+    width: 60px;
+}
+
+
+.middle-dropdown-text {
+    margin-bottom: 35px;
+    text-align: center;
 }
 
 .user-links {
-    position: relative;
+    position: relative; 
+    margin-right: 25px;
+}
+
+.exit-btn {
+
 }
 
 .user-logo-link:hover {
     cursor: pointer;
+}
+
+.user-dropdown-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.signup-btn {
+    background-color: #785028;
+    color: #fff;
+    padding: 4px 45px;
+    font-family: sans-serif;
+    margin-left: 5px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #785028;
+    font-size: 16px;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: #785028;
+    padding: 4px 48px;
+    font-family: sans-serif;
+    margin-right: 5px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #785028;
+    font-size: 16px;
+}
+
+.signin-text-dropdown {
+    font-family: "Ginto Nord", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: baseline;
+    margin-bottom: 10px;
 }

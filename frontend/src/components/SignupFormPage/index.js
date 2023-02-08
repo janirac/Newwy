@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css"
 
@@ -36,39 +36,67 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-      <label>
-        Email
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
+    <div className="login-page-main">
+      <h3 className="text-one-login">
+      Create an Account to Shop Newwy Thrift
+      </h3>
+      <h3 className="text-one-login">
+      Buy what you love, sell what someone else will love. Repeat.
+      </h3>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <div className='email-input-section'>
+          <input
+            className='email-input'
+            type="text" //should I put email or text
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required //optional
+          />
+          <div className='email-input-text'>
+            Email*
+          </div>
+        </div>
+        <div className="password-input-section">
+          <input
+          className="password-input"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+          placeholder="Password*"
+          />
+          {/* <div className="password-input-text">
+            Password*
+          </div> */}
+        </div>
+        <div className="password-input-section">
+          <input
+            className="password-input"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+            placeholder="Confirm Password*"
+            />
+          {/* <div className="password-input-text">
+            Confirm Password*
+          </div> */}
+        </div>
+        <button className="submit-btn" type="submit">Sign Up</button>
+        <text className="footer-text">
+          Already have a Newwy account?
+          <NavLink to='/login'>
+            <text className="sign-in-text-link">  Sign In</text>
+          </NavLink>
+        </text>
+        <text className="text-two">
+          By joining, you agree to receive Newwy emails. You may unsubscribe at any time.
+        </text>
+      </form>
+    </div>
   );
 }
 

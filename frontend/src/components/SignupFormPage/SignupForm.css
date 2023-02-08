@@ -1,0 +1,62 @@
+.email-input-join-now {
+    border-bottom: 1px solid black;
+    color: #2c2c2c;
+    height: 20px;
+    width: 50%; 
+    background-color: transparent;
+    border: none;
+  }
+  
+  
+.email-input-join-now:focus {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+.email-input-text-join-now {
+    transform: translateY(-24px);
+    transition: all .18s ease-out;
+    will-change: transform,color,font-size;
+}
+  
+.top-text-one {
+    font-weight: 800;
+    font-size: 20px;
+    color: black;
+    letter-spacing: .5px;
+}
+
+.top-text-two {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Sharp Grotesk 20", sans-serif;
+}
+
+.signup-submit-btn {
+    background-color: #785028;
+    color: #fff;
+    padding: 4px 48px;
+    font-family: sans-serif;
+    border: #785028;
+}
+
+.text-one {
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .3px;
+    color: rgb(108, 108, 108);
+}
+
+.text-two {
+    font-size: 15px;
+    font-weight: 400px;
+    letter-spacing: .3px;
+    color: rgb(108, 108, 108);
+}
+
+.sign-in-text-link {
+    font-size: 15px;
+    cursor: pointer;
+    color: #785028;
+}
