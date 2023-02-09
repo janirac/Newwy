@@ -42,6 +42,11 @@ function LoginFormPage() {
     }
   }
 
+  const handleDemoSubmit = (e) => {
+    e.preventDefault()
+    return dispatch(sessionActions.fetchSession({ credential: 'demo@user.io', password: 'password'}))
+  }
+
   return (
     <div className='login-page-main'>
      <img className='img-login' src="https://via.placeholder.com/100"/>
@@ -79,6 +84,9 @@ function LoginFormPage() {
           </div> */}
         </div>
         <button className='submit-btn' type="submit">Sign In</button>
+      </form>
+      <form onSubmit={handleDemoSubmit}>
+        <button className='demo-btn'>Demo Login</button>
       </form>
       <div>
         <text className='footer-text'>Don't have a Newwy account yet?      

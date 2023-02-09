@@ -30,8 +30,6 @@ function Navigation() {
             onMouseEnter={() => setshowUserDropdown(true)}
             onMouseLeave={() => setshowUserDropdown(false)}
             >
-              {/* <div className='place'>testing
-              </div>  */}
               <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
               <p className='signin-text-dropdown'>Sign In</p>
               <div className='middle-dropdown'>
@@ -181,8 +179,7 @@ function Navigation() {
                  <span 
                   className="user-logo-link" 
                   onClick={() => setshowUserDropdown(showUserDropdown ? false : true)}
-                  onMouseEnter={() => setshowUserDropdown(showUserDropdown ? false : true)}
-                  onMouseOut={() => setshowUserDropdown(false)}
+                  onMouseEnter={() => setshowUserDropdown(true)}
                   >
                   {userIcon}
                 </span>

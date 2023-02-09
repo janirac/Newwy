@@ -7,16 +7,17 @@ import Footer from "./components/Footer";
 import { useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 
-const location = useLocation
-
-const locationLoginOrSignUp = location.pathname !== "/login" || location.pathname !== "/signup"
 
 function App() {
+  
+  const location = useLocation()
+  const locationLoginOrSignUp = location.pathname !== "/login" && location.pathname !== "/signup"
+
   return (
     <>
       <Navigation />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Hero />
           </Route>
           <Route path="/login">

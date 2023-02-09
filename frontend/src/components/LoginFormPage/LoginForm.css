@@ -114,6 +114,17 @@ input:focus:placeholder{
   width: 200px;
 }
 
+.demo-btn {
+  background-color: #785028;
+  color: #fff;
+  padding: 4px 48px;
+  font-family: sans-serif;
+  border: #785028;
+  height: 40px;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
 .footer-text {
   font-size: 15px;
   font-weight: 400px;
