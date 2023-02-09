@@ -112,6 +112,7 @@ input:focus:placeholder{
   height: 40px;
   margin-bottom: 30px;
   width: 200px;
+  cursor: pointer;
 }
 
 .demo-btn {
@@ -123,6 +124,7 @@ input:focus:placeholder{
   height: 40px;
   margin-bottom: 30px;
   width: 200px;
+  cursor: pointer;
 }
 
 .footer-text {
