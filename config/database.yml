@@ -86,5 +86,5 @@ test:
 #   password: <%= ENV["NEWWY_DATABASE_PASSWORD"] %>
 
   production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
