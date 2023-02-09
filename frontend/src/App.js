@@ -3,12 +3,22 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import { useLocation } from "react-router-dom";
+import Hero from "./components/Hero";
+
+const location = useLocation
+
+const locationLoginOrSignUp = location.pathname !== "/login" || location.pathname !== "/signup"
 
 function App() {
   return (
     <>
       <Navigation />
         <Switch>
+          <Route path="/">
+            <Hero />
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
@@ -19,6 +29,9 @@ function App() {
             
           </Route>
         </Switch>
+          {locationLoginOrSignUp && 
+            <Footer />
+          }
     </>
   );
 }

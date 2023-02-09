@@ -1,0 +1,43 @@
+.footer-container {
+    background-color: #785028;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 55px;
+}
+
+.logo-image-footer {
+    font-family: sans-serif;
+    font-size: 30px;
+    color: antiquewhite;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+}
+
+.footer-headers {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: white;
+}
+
+.footer-section-text {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+.footer-copyright {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .7px;
+    color: white;
+}
+
+.footer-sections {
+    line-height: 32px;
+}

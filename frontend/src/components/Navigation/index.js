@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faX, faBagShopping, faBars, faMagnifyingGlass, faGear, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 import * as sessionActions from "../../store/session"
 
-const checklistIcon = <FontAwesomeIcon icon={faClipboardList} />
-const settingsIcon = <FontAwesomeIcon icon={faGear} />
+const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
+const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
 const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
 const browseIcon = <FontAwesomeIcon className='browse-icon' icon={faBars} />
 const cartIcon = <FontAwesomeIcon className='shopping-bag' icon={faBagShopping} />
@@ -68,21 +68,21 @@ function Navigation() {
             onMouseLeave={() => setshowUserDropdown(false)}
             >
               <div className='profile-btn-main'>
-                <NavLink to='/'>
+                <NavLink className='profile-btn-main-link' to='/'>
                   <button className='profile-btn'>
                     <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
                     <div className='profile-btn-view'>
                       <h4 className='profile-name'>{sessionUser.email}</h4>
-                      <div>View</div>
+                      <div className='view-name'>View</div>
                     </div>
                   </button>
                 </NavLink>
               </div>
               <div className='orders-btn-main'>
-                <NavLink to="/">
+                <NavLink className='orders-btn-main-link' to="/">
                   <button className='orders-btn'>
                     {checklistIcon}
-                    <text>Orders</text>
+                    <text className='orders-text'>Orders</text>
                   </button>
                 </NavLink>
               </div>
@@ -90,14 +90,14 @@ function Navigation() {
                 <NavLink to='/'>
                   <button className='settings-btn'>
                     {settingsIcon}
-                    <text>Settings</text>
+                    <text className='settings-text'>Settings</text>
                   </button>
                 </NavLink>
               </div>
               <div className='logout-button-main'>
                 <NavLink to='/logout'>
                   <button className='logout-button' onClick={logout}>
-                    <text>Sign Out</text>
+                    <text className='signout-text'>Sign Out</text>
                   </button>
                 </NavLink>
               </div>
@@ -110,25 +110,22 @@ function Navigation() {
   const locationLoginOrSignUp = location.pathname === "/login" || location.pathname === "/signup"
 
   let sessionLinks;
+  let mainLinks;
+
   if (locationLoginOrSignUp){
+    mainLinks = (
+      <div className='main-links'>
+            
+      </div>
+    )
     sessionLinks = (
       <NavLink className='exit-btn' to='/'>
         {exitModalIcon}
       </NavLink>
     )
   } else if (sessionUser) {
-    sessionLinks = (
-      userLogoutDropDown()
-    );
-  } else {
-    sessionLinks = (
-      userLoginDropdown()
-    );
-  }
-
-  return (
-    <nav className='navigation-bar'>
-        <div className='main-links'>
+    mainLinks = (
+      <div className='main-links'>
             <div className='browse-link'>
               <NavLink className='browse-link-icon' to='/'>
                 {browseIcon}
@@ -142,6 +139,35 @@ function Navigation() {
               </NavLink>
             </div>
         </div>
+    )
+    sessionLinks = (
+      userLogoutDropDown()
+    );
+  } else {
+    mainLinks = (
+      <div className='main-links'>
+            <div className='browse-link'>
+              <NavLink className='browse-link-icon' to='/'>
+                {browseIcon}
+                Browse
+              </NavLink>
+            </div>
+            <div className='search-link'>
+              <NavLink className='search-link-icon' to='/'>
+                {searchIcon}
+                Search
+              </NavLink>
+            </div>
+        </div>
+    )
+    sessionLinks = (
+      userLoginDropdown()
+    );
+  }
+
+  return (
+    <nav className='navigation-bar'>
+        {mainLinks}
         <div className='logo'>
             <NavLink className='logo-image' exact to="/">
               <div className='logo-image'>newwy</div>
