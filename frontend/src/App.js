@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import { useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 import ProductShowPage from "./components/ProductShowPage";
+import ProductIndexPage from "./components/ProductIndexPage"
 
 
 function App() {
@@ -27,11 +28,14 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/signout'>
+          <Route path='/category/'>
             
           </Route>
           <Route path="/products/:productId">
             <ProductShowPage />
+          </Route>
+          <Route path="/products">
+            <ProductIndexPage />
           </Route>
         </Switch>
           {locationLoginOrSignUp && 

@@ -1,0 +1,29 @@
+.product-card-main {
+    align-items: center;
+}
+
+.product-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+}
+
+.img-main {
+    display: flex;
+}
+
+.img-dropdown-indexpage {
+    height: 440px;
+    width: 80%;
+}
+
+.heart-icon-index {
+    width: 20px;
+    height: 20px;
+}
+
+.product-index-description {
+    width: 80%;
+    background-color: white;
+}
