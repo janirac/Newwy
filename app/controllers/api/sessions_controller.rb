@@ -11,21 +11,15 @@ class Api::SessionsController < ApplicationController
 
   def create
     credentials = params[:credential]
-      password = params[:password]
+    password = params[:password]
 
-      @user = User.find_by_credentials(credentials, password)
-
-    puts credentials
-    puts "---------"
-    puts password
-    puts "----------"
-    puts @user
+    @user = User.find_by_credentials(credentials, password)
 
       if @user&.save
          login!(@user)
          render 'api/users/show'
       else 
-         render json: {errors: ['The provided credentials were invalid'] }, status: :unauthorized
+         render json: {errors: [" We couldn't find an account associated with this email address"] }, status: :unauthorized
       end 
   end
 

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {} from '@fortawesome/free-solid-svg-icons'
 import './LoginForm.css'
+
+const errorIcon = <FontAwesomeIcon className='errorIcon' icon="fa-thin fa-square-exclamation" />
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -54,9 +58,6 @@ function LoginFormPage() {
         Already Have an Account?
         </h3>
       <form className='login-form' onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
         <div className="email-input-section">
           <input
             // onClick={setClickedInput}
@@ -65,19 +66,23 @@ function LoginFormPage() {
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required //optional
-          />
+            />
           <div className='email-input-text'>
             Email*
           </div>
+          <ul className='error-handling'>
+            {errorIcon}
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
         </div>
         <div className='password-input-section'>
           <input
           className='password-input'
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder='Password*'
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          placeholder='Password*'
           />
           {/* <div className='password-input-text'>
             Password*
