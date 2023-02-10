@@ -19,4 +19,8 @@
 class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :price, :description, :amount, :category, :color, :condition, :brand, presence: true
+
+    def last_update 
+        @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)
+    end 
 end

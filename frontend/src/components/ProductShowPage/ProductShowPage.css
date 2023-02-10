@@ -36,12 +36,24 @@
 
 .product-info-container {
     width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info-label {
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-seller-info {
     display: flex;
     justify-content: space-between;
     margin-top: 62px;
+    align-items: center;
 }
 
 .img-dropdown-profile-photo {
@@ -62,7 +74,7 @@
 }
 
 .product-cart-description {
-    /* height: 130px; */
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,9 +92,50 @@
     border-radius: 2px;
 }
 
+.product-add-bag-btn:hover {
+    background-color: transparent;
+    color: #785028;
+    border: 2px solid #785028;
+}
+
 .product-description-brand-condition-color-price{
     height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+.favorite-button-main {
+    display: flex;
+    width: 61px;
+    height: 24px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.favorite-button {
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    width: 61px;
+    border-radius: 15px;
+    background-color: white;
+    border: white;
+    align-items: center;
+    cursor: pointer;
+}
+
+.favorite-number {
+    width: 27px;
+    height: 15px;
+}
+
+.favorite-heart {
+    width: 18px;
+    color: #785028;
+    height: 17px;
+}
+
+.favorite-button:hover {
+    border: 1px solid #785028;
+}
+

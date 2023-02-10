@@ -68,10 +68,12 @@ function ProductShowPage() {
                                 <img className='img-dropdown-profile-photo' src="https://via.placeholder.com/50"/>
                                 <p>username</p>
                             </div>
-                            <button className="favorite-button">
-                                <div>23</div>
-                                <div>{heartIcon()}</div>
-                            </button>
+                            <div className="favorite-button-main">
+                                <button className="favorite-button">
+                                    <div className="favorite-number">23</div>
+                                    <div className="favorite-heart">{heartIcon()}</div>
+                                </button>
+                            </div>
                         </div>
                         <div className="product-title-price-size">
                             <div className="product-name">{product.name}</div>
