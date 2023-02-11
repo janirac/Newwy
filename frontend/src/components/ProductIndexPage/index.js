@@ -13,10 +13,12 @@ function ProductIndexPage() {
     }, [])
 
     return (
-        <div>
-            {products.map(product => (
-                <ProductCard product={product}/>
-            ))}
+        <div className="product-index-main">
+            <div className="product-index-container">
+                {products.map(product => (
+                    <ProductCard product={product}/>
+                ))}
+            </div>
         </div>
     )
 }
