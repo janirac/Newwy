@@ -4,10 +4,16 @@
     padding: 50px;
 }
 
+.product-index-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 25px;
+}
+
+
 .product-card-main {
     align-items: center;
-    width: 20%;
-    padding: 35px;
 }
 
 .product-card-container {
