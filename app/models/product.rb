@@ -23,6 +23,7 @@ class Product < ApplicationRecord
     validates :price, :description, :amount, :category, :color, :condition, :brand, presence: true
 
     has_many :product_images, dependent: :destroy
+    has_many :categories, dependent: :destroy
 
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)
@@ -31,5 +32,9 @@ class Product < ApplicationRecord
     def images(product_id)
         # @product = Product.find(id)
         @images = ProductImage.where(product_id: product_id)
+    end 
+
+    def categories(product_id)
+        @categories = Category.where(product_id: product_id)
     end 
 end

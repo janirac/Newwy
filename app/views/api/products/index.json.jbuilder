@@ -3,4 +3,7 @@ json.array! @products do |product|
     json.images product.images(product.id) do |image|
         json.extract!(image, :id, :image_url)
     end
+    json.categories product.categories(product.id) do |category|
+        json.extract!(category, :id, :category)
+    end 
 end
