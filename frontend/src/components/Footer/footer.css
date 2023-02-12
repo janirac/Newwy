@@ -1,3 +1,11 @@
+.footer-main {
+    background-color: #FAF7F4;
+    height: 400px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 .footer-container {
     background-color: #785028;
     width: 100%;
@@ -6,6 +14,7 @@
     justify-content: space-around;
     align-items: flex-start;
     padding-top: 55px;
+    position: relative;
 }
 
 .logo-image-footer {
@@ -40,4 +49,9 @@
 
 .footer-sections {
     line-height: 32px;
+}
+
+.privacy-links {
+    position: absolute;
+    bottom: -33px;
 }

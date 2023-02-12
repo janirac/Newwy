@@ -1,4 +1,19 @@
-ul.react-multi-carousel-track  > li.react-multi-carousel-item {
+ul.multiple-product-carousel  > li.react-multi-carousel-item {
     margin: 0 10px;
     width: 280px !important;
+        /* margin: 0 10px;
+        width: 336px !important; */
+}
+
+.react-multi-carousel-list {
+    margin: 0 auto;
+    width: 78vw;
+}
+
+.carousel-main {
+    margin-top: 150px;
+}
+
+.single-product-carousel {
+    width: 336px;
 }

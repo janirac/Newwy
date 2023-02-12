@@ -34,19 +34,19 @@ function ProductSlider() {
         <div>
             <div className='carousel-main'>
             <h2>Category Name</h2>
-                <Carousel responsive={responsive} slidesToSlide={2}>
+                <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
                     {productCards}
                 </Carousel>;
             </div>
             <div className='carousel-main'>
             <h2>Category Name</h2>
-                <Carousel responsive={responsive} slidesToSlide={2}>
+                <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
                     {productCards}
                 </Carousel>;
             </div>
             <div className='carousel-main'>
             <h2>Category Name</h2>
-                <Carousel responsive={responsive} slidesToSlide={2}>
+                <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
                     {productCards}
                 </Carousel>;
             </div>

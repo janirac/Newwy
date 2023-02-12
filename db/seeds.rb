@@ -190,6 +190,25 @@ ApplicationRecord.transaction do
       size: "XS",
       original_price: 149.00
     )
-  
+    
+    puts "Creating Product Images"
+   ProductImage.create!(
+        product_id: 8,
+        image_url: "https://i.ibb.co/yp8twkV/1.jpg"
+    )
+   ProductImage.create!(
+        product_id: 8,
+        image_url: "https://i.ibb.co/W2rp4zh/2.jpg"
+    )
+   ProductImage.create!(
+        product_id: 8,
+        image_url: "https://i.ibb.co/vxxx35c/3.jpg"
+    )
+   ProductImage.create!(
+        product_id: 8,
+        image_url: "https://i.ibb.co/NYj5F2Q/4.jpg"
+    )
+   
     puts "Done!"
   end
+ 

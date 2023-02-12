@@ -16,11 +16,20 @@
 #  size           :string
 #  original_price :decimal(, )
 #
+require 'product_image.rb'
+
 class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :price, :description, :amount, :category, :color, :condition, :brand, presence: true
 
+    has_many :product_images, dependent: :destroy
+
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)
+    end 
+
+    def images(product_id)
+        # @product = Product.find(id)
+        @images = ProductImage.where(product_id: product_id)
     end 
 end
