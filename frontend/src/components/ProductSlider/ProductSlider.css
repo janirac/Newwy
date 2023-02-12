@@ -1,0 +1,4 @@
+ul.react-multi-carousel-track  > li.react-multi-carousel-item {
+    margin: 0 10px;
+    width: 280px !important;
+}

@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 import ProductShowPage from "./components/ProductShowPage";
 import ProductIndexPage from "./components/ProductIndexPage"
+import ProductSlider from "./components/ProductSlider";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Hero />
+            <ProductSlider />
           </Route>
           <Route path="/login">
             <LoginFormPage />
@@ -28,13 +30,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/category/'>
+          {/* <Route path='/category/'>
             
-          </Route>
+          </Route> */}
           <Route path="/products/:productId">
             <ProductShowPage />
           </Route>
-          <Route path="/products">
+          <Route path="/category">
             <ProductIndexPage />
           </Route>
         </Switch>
