@@ -42,7 +42,6 @@ ApplicationRecord.transaction do
       The dress was designed in Paris and has a corseted body and adjustable straps (pictured)
       It`s a French 38. It`s fits me and I`m a Small/Medium.",
       amount: 1,
-      category: "Dresses",
       color: "black",
       condition: "Like New",
       brand: "Other/Unknown",
@@ -57,7 +56,6 @@ ApplicationRecord.transaction do
       ruffles and tiered edges all in blouses, skirts and maxi dresses. Garden party, anyone?
       19L Cotton Imported",
       amount: 4,
-      category: "Tops",
       color: "Multi",
       condition: "Used",
       brand: "Love The Label"
@@ -73,7 +71,6 @@ ApplicationRecord.transaction do
       Imported
       Chelsea is 5'10, wearing a size XS",
       amount: 4,
-      category: "Sweaters + Sweatshirts",
       color: "Purple",
       condition: "Used",
       brand: "Anthropologie",
@@ -86,7 +83,6 @@ ApplicationRecord.transaction do
       description: "Worn once or twice. Perfect condition. Silver details. Comes with belt. 
       Nice heavy suede. I accept reasonable offers :)",
       amount: 1,
-      category: "Outerwear",
       color: "Grey",
       condition: "Like New",
       brand: "Topshop",
@@ -102,7 +98,6 @@ ApplicationRecord.transaction do
       couldn`t quite button these. 15 inches lying flat across waist. 18 inches across hips (measured flat at bottom of zipper) Lower 8.5 inch rise. 
       Button fly and classic leather JJ logo on back pocket.",
       amount: 1,
-      category: "Jeans",
       color: "Blue",
       condition: "Like New",
       brand: "Joe's Jeans",
@@ -120,7 +115,6 @@ ApplicationRecord.transaction do
       Imported
       Imena is 5'11 and wearing a Size 27",
       amount: 4,
-      category: "Skirts",
       color: "Grey",
       condition: "Used",
       brand: "AGOLDE",
@@ -133,7 +127,6 @@ ApplicationRecord.transaction do
       description: "26” the perfect Levi’s staple piece to have in your closet! 
       Perfect condition",
       amount: 1,
-      category: "Shorts",
       color: "Blue",
       condition: "Like New",
       brand: "Levi's",
@@ -146,7 +139,6 @@ ApplicationRecord.transaction do
       price: 70.00,
       description: "Black, pockets on side, zipper pocket No stains",
       amount: 1,
-      category: "Activewear",
       color: "Black",
       condition: "Like New",
       brand: "Lululemon",
@@ -162,7 +154,6 @@ ApplicationRecord.transaction do
       I inspect and account for all imperfections that I come across, but please do be aware 
       there may be some small details I miss.",
       amount: 1,
-      category: "Shorts",
       color: "Purple",
       condition: "Used",
       brand: "Guess",
@@ -183,7 +174,6 @@ ApplicationRecord.transaction do
       Item shown is size Small
       Measurements taken from size Medium",
       amount: 1,
-      category: "JumpSuits + Rompers",
       color: "Blue",
       condition: "New With Tags",
       brand: "Urban Outfitters",
@@ -207,6 +197,13 @@ ApplicationRecord.transaction do
    ProductImage.create!(
         product_id: 8,
         image_url: "https://i.ibb.co/NYj5F2Q/4.jpg"
+    )
+
+    puts "Creating Category"
+
+    Category.create!(
+        product_id: 8,
+        category_ids: [6, 14, 18]
     )
    
     puts "Done!"

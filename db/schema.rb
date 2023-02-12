@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_12_070825) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_12_141319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "category", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_ids", default: [], array: true
     t.index ["product_id"], name: "index_categories_on_product_id"
   end
 
@@ -37,7 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_070825) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount", null: false
-    t.string "category", null: false
     t.string "color", null: false
     t.string "condition", null: false
     t.string "brand", null: false
@@ -45,6 +44,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_12_070825) do
     t.decimal "original_price"
     t.index ["name"], name: "index_products_on_name", unique: true
     t.index ["price"], name: "index_products_on_price"
+  end
+
+  create_table "update_column_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

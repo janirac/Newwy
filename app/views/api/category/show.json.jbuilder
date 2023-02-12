@@ -1,3 +1,3 @@
-json.category do
-    json.extract! @category, :id, :category
-end
+# json.category do
+    json.extract! @category, :category_ids
+# end

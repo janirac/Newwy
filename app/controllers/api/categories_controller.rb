@@ -1,4 +1,4 @@
-class Api::CategoryController < ApplicationController
+class Api::CategoriesController < ApplicationController
     def show
         @category = Category.find(params[:id])
     end 
@@ -18,7 +18,7 @@ class Api::CategoryController < ApplicationController
     
     def category_params
     
-        params.require(:category).permit(:category)
+        params.require(:category).permit(:category_ids)
       end
     end
     

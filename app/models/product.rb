@@ -20,10 +20,10 @@ require 'product_image.rb'
 
 class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
-    validates :price, :description, :amount, :category, :color, :condition, :brand, presence: true
+    validates :price, :description, :amount, :color, :condition, :brand, presence: true
 
     has_many :product_images, dependent: :destroy
-    has_many :categories, dependent: :destroy
+    has_one :categories, dependent: :destroy
 
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)
@@ -35,6 +35,7 @@ class Product < ApplicationRecord
     end 
 
     def categories(product_id)
-        @categories = Category.where(product_id: product_id)
+        category = Category.where(product_id: product_id).pluck(:category_ids)
+        @categories = category
     end 
 end
