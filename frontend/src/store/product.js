@@ -18,7 +18,7 @@ const addProduct = (product) => {
 }
 
 export const fetchProducts = () => async dispatch => {
-    const response = await fetch('/api/products')
+    const response = await csrfFetch('/api/products')
 
     const data = await response.json()
     dispatch(setProducts(data))
@@ -32,7 +32,7 @@ export const fetchProduct = productId => async dispatch => {
     return response
 }
 
-export const createBench = product => async dispatch => {
+export const createProduct = product => async dispatch => {
     const response = await csrfFetch(`/api/products`, {
         method: 'POST',
         body: JSON.stringify(product),

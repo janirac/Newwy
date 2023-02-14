@@ -1,3 +1,6 @@
+.product-card {
+    position: relative;
+}
 .product-index-main {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +30,6 @@
     display: flex;
     height: 80%;
     width: 100%;
-    position: relative;
 }
 
 .img-dropdown-btn {
@@ -35,7 +37,7 @@
     height: 30px;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 25px;
     color: #785028;
     border-radius: 15px;
     border: 1px solid white;
@@ -56,6 +58,11 @@
 .heart-icon-index {
     width: 20px;
     height: 20px;
+}
+
+.active > svg{
+    fill: rgb(120, 80, 40);
+    /* color: #785028; */
 }
 
 .product-index-description-container {

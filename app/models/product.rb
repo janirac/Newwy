@@ -9,7 +9,6 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  amount         :integer          not null
-#  category       :string           not null
 #  color          :string           not null
 #  condition      :string           not null
 #  brand          :string           not null
@@ -23,7 +22,14 @@ class Product < ApplicationRecord
     validates :price, :description, :amount, :color, :condition, :brand, presence: true
 
     has_many :product_images, dependent: :destroy
-    has_one :categories, dependent: :destroy
+    has_one :category, dependent: :destroy
+    # belongs_to :user
+
+    # has_many :favorites, dependent: :destroy
+    # has_many :favorite_users, 
+    #     through: :favorites, 
+    #     source: :user,
+    #     dependent: :destroy
 
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)

@@ -1,4 +1,5 @@
 import csrfFetch from './csrf';
+import { fetchFavorites } from './favorites';
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
@@ -63,6 +64,8 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json()
     storeCurrentUser(data.user)
     dispatch(setCurrentUser(data.user))
+    // debugger
+    // dispatch(fetchFavorites());
     return response;
   }
 
@@ -83,6 +86,7 @@ export const login = ({ credential, password }) => async dispatch => {
     dispatch(setCurrentUser(data.user));
     return response;
   };
+
 
 const initialState = { 
   user: JSON.parse(sessionStorage.getItem("currentUser"))

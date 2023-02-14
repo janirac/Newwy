@@ -13,6 +13,11 @@ class Api::UsersController < ApplicationController
     end 
   end
 
+  def favorited_product(product)
+    params.require(:user).permit(:product_id)
+    @user = User.new()
+    User.favorited_product(product_id)
+  end
 
   private
 
