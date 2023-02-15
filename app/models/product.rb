@@ -39,6 +39,8 @@ class Product < ApplicationRecord
         through: :favorites, 
         source: :user,
         dependent: :destroy
+    
+    has_many :reviews
 
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)

@@ -37,6 +37,8 @@ class User < ApplicationRecord
     
   has_many :cart_items, 
       through: :cart
+
+  has_many :reviews
     
   def favorited_product?(product)
     favorite_products.include?(product)

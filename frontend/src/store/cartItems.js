@@ -4,10 +4,12 @@ const RECEIVE_CART_ITEMS = 'cartItems/RECEIVE_CART_ITEMS'
 const RECEIVE_CART_ITEM = 'cartItems/RECEIVE_CART_ITEM'
 const REMOVE_CART_ITEM = 'cartItems/REMOVE_CART_ITEM'
 
-const receiveCartItem = (cartItem) =>({
-    type: RECEIVE_CART_ITEM,
-    cartItem
-})
+const receiveCartItem = (cartItem) =>{
+    return {
+        type: RECEIVE_CART_ITEM,
+        cartItem
+    }
+}
 
 const receiveCartItems = (cartItems) => {
     return {
