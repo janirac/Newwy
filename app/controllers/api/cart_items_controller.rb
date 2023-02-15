@@ -20,8 +20,7 @@ class Api::CartItemsController < ApplicationController
    end
 
    def destroy
-    
-        @cart_item = CartItem.find_by(id: cart_item_params[:id])
+        @cart_item = CartItem.find(params[:id])
    
         if @cart_item&.delete
             render json: "Successfully deleted the cart item"
@@ -33,7 +32,7 @@ class Api::CartItemsController < ApplicationController
    private
 
    def cart_item_params
-    debugger
         params.require(:cart_item).permit(:id, :cart_id, :product_id)
    end
+
 end

@@ -1,9 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
 import { getProduct } from "../../store/product"
+import { deleteCartItem } from "../../store/cartItems"
 
 const CartItemCard = ( { cartItem } ) => {
+    const dispatch = useDispatch()
     const productId = cartItem.productId
     const product = useSelector(getProduct(productId))
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        dispatch(deleteCartItem(cartItem.id))
+    }
     
     return (
         <div className="card-item-card">
@@ -14,7 +21,7 @@ const CartItemCard = ( { cartItem } ) => {
                 <div>{product.condition}</div>
                 <div>{product.price}</div>
             </div>
-            {/* <button onClick={() => dispatch(removeCartItem(cartItem.id))}>Remove</button> */}
+            <button className="cart-item-btn" onClick={handleClick}>Remove</button>
         </div>
     )
 }
