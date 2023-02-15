@@ -9,6 +9,8 @@ import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session'
 import * as productActions from "./store/product"
 import * as favoriteActions from './store/favorites'
+import * as cartItemsActions from './store/cartItems'
+import * as cartActions from './store/cart'
 
 const store = configureStore();
 
@@ -18,6 +20,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.productActions = productActions;
   window.favoriteActions = favoriteActions;
+  window.cartItemsActions = cartItemsActions;
+  window.cartActions = cartActions;
 }
 
 function Root() {

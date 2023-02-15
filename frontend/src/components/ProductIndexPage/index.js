@@ -13,10 +13,6 @@ function ProductIndexPage() {
 
     useEffect(() => {
         dispatch(fetchProducts())
-        // debugger
-        // if (sessionUser) {
-            // dispatch(fetchFavorites())
-        // }
     }, [])
 
     return (

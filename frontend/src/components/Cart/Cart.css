@@ -1,0 +1,35 @@
+.cart-container {
+    position: absolute;
+    width: 400px;
+    background-color: black;
+    height: 100%;
+    z-index: 9999999;
+    right: 0;
+    top: 33px;
+}
+
+.cart-container-header {
+    background-color: white;
+}
+
+.card-item-card {
+    background-color: white;
+    display: flex;
+    height: 131px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cart-image-show {
+    height: auto;
+    width: 88px;
+}
+
+.cart-description {
+    height: 73%;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -41,10 +41,12 @@ function ProductSlider() {
           items: 4
         }
     };
-
+    
+    
     const productCards = products.map(product => (
-        
-        <ProductCard product={product} key={product.id} />
+        <NavLink className='product-card-link' to={`/products/${product.id}`}>
+            <ProductCard product={product} key={product.id} />
+        </NavLink>
     ))
 
     //   console.log(productCards)

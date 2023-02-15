@@ -1,3 +1,4 @@
+import { fetchCartItems } from './cartItems';
 import csrfFetch from './csrf';
 import { fetchFavorites } from './favorites';
 
@@ -35,6 +36,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
+    dispatch(fetchCartItems())
     // return response;
   };
 
@@ -50,6 +52,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
+    dispatch(fetchCartItems())
     return response;
   };
 

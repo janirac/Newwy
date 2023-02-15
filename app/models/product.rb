@@ -23,13 +23,22 @@ class Product < ApplicationRecord
 
     has_many :product_images, dependent: :destroy
     has_one :category, dependent: :destroy
-    # belongs_to :user
+    belongs_to :user
 
-    # has_many :favorites, dependent: :destroy
-    # has_many :favorite_users, 
-    #     through: :favorites, 
-    #     source: :user,
-    #     dependent: :destroy
+    has_many :cart_items, 
+        dependent: :destroy
+    
+    has_many :carts,
+        through: :cart_items,
+        dependent: :destroy
+        
+    has_many :favorites, 
+        dependent: :destroy
+
+    has_many :favorite_users, 
+        through: :favorites, 
+        source: :user,
+        dependent: :destroy
 
     def last_update 
         @last_update = Product.where('extract(month from updated_at) = ?', Date.today.month)

@@ -7,6 +7,10 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faX, faBagShopping, faBars, faMagnifyingGlass, faGear, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 import * as sessionActions from "../../store/session"
+import CartItems from '../Cart/CartIndex';
+import { fetchCartItems } from '../../store/cartItems';
+import { fetchProducts } from '../../store/product';
+import { useEffect } from 'react';
 
 const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
 const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
@@ -21,6 +25,18 @@ function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
   const [showUserDropdown, setshowUserDropdown] = useState(false);
   const location = useLocation()
+  const [showCart, setShowCart] = useState(false)
+
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [])
+
+  const handleShoppingCart = (e) => {
+    e.preventDefault()
+  
+    showCart ? setShowCart(false) : setShowCart(true)
+    dispatch(fetchCartItems())
+  }
   
   const userLoginDropdown = () => {
 
@@ -183,11 +199,14 @@ function Navigation() {
                   >
                   {userIcon}
                 </span>
-                {cartIcon}
+                <button className='button-cart-icon' onClick={handleShoppingCart}>
+                  {cartIcon}
+                </button>
                 {sessionLinks}
               </div>
             }
         </div>
+        {showCart && <CartItems />}
     </nav>
   );
 }

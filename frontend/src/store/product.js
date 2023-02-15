@@ -17,6 +17,11 @@ const addProduct = (product) => {
     }
 }
 
+export const getProduct = productId => state => {
+    return state?.products ? state.products[productId] : null;
+}
+
+  
 export const fetchProducts = () => async dispatch => {
     const response = await csrfFetch('/api/products')
 
@@ -29,7 +34,7 @@ export const fetchProduct = productId => async dispatch => {
     
     const data = await response.json()
     dispatch(addProduct(data))
-    return response
+    // return response
 }
 
 export const createProduct = product => async dispatch => {

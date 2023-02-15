@@ -6,6 +6,8 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      
+      @cart = Cart.create!(user_id: @user.id)
       login!(@user)
       render :show
     else

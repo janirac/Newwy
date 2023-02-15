@@ -29,8 +29,15 @@ class User < ApplicationRecord
     source: :product,
     dependent: :destroy
     
-  # has_many :products, dependent: :destroy
-  # has_one :cart, dependent: :destroy
+  has_many :products, 
+    dependent: :destroy
+
+  has_one :cart, 
+    dependent: :destroy
+    
+  has_many :cart_items, 
+      through: :cart
+    
   def favorited_product?(product)
     favorite_products.include?(product)
   end

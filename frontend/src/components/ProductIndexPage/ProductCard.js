@@ -2,7 +2,7 @@ import { heartIcon } from "../ProductShowPage";
 import "./ProductIndexPage.css"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createFavorite, deleteFavorite, fetchFavorites } from "../../store/favorites";
 import { useState, useEffect } from "react";
@@ -13,13 +13,6 @@ function ProductCard( { product } ) {
     const dispatch = useDispatch()
     const favorites = useSelector(state => Object.values(state.favorites));
     const history = useHistory()
-
-    // useEffect(() => {
-    //     if (Object.values(favorites).length == 0) {
-    //         dispatch(fetchFavorites())
-    //     }
-    // }, []);
-
 
     const mainImage = product.images[0] ? product.images[0].imageUrl : "www.google.com/img.png"
     const responsive = {
@@ -33,15 +26,6 @@ function ProductCard( { product } ) {
     const locationIndex = location.pathname === "/" 
     
     const [isFavorited, setIsFavorited] = useState(false)
-
-    // favorites.forEach((favorite) => {
-    //     if (favorite.product_id == product.id) {
-    //         setIsFavorited(true);
-    //     }
-    // });
-    
-    // const sessionUser = useSelector(state => state.session.user);
-
 
     const handleFavoritesButton = (e) => {
         e.preventDefault()
@@ -63,7 +47,7 @@ function ProductCard( { product } ) {
         // <NavLink className='product-card-link' to={`/products/${product.id}`}>
 
         // </NavLink>
-        history.push(`/products/${product.id - 1}`)
+        
     }
 
     // debugger

@@ -4,7 +4,13 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchProduct } from "../../store/product";
 import Favorites from "../Favorites";
+import { getCart } from "../../store/cart";
+import { getProduct } from "../../store/product";
 import "./ProductShowPage.css"
+// import CartItems from "../Cart/CartIndex";
+// import { createCartItem } from "../../store/cart";
+import { createCartItem } from "../../store/cartItems";
+import { fetchCart } from "../../store/cart";
 
 export const heartIcon = () => ( 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -16,12 +22,24 @@ function ProductShowPage() {
     const dispatch = useDispatch()
     const { productId } = useParams()
     const sessionUser = useSelector(state => state.session.user)
-    const product = useSelector(state => state.products[productId])
-    // const favoriteProductId = useSelector(state => state.)
+    const product = useSelector(getProduct(productId))
+    const cart = useSelector(getCart())
+    console.log(cart)
+    // let cartItem = useSelector(getCartItem(productId))
+    // const favoriteProductId = useSelector(state => state.)\\
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // const cartItem = {productId} 
+        dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
+    }
 
     useEffect(() => {
-        dispatch(fetchProduct(productId))
-    }, [productId, dispatch])
+        if (productId){
+            dispatch(fetchProduct(productId))
+            dispatch(fetchCart(cart))
+        }
+    }, [dispatch, productId])
 
     if(!product) {
         return null
@@ -70,7 +88,9 @@ function ProductShowPage() {
                     </div>
                     <div className="product-cart-description">
                         <div className="product-add-bag">
-                            <button className="product-add-bag-btn">Add to Bag</button>
+                            <button className="product-add-bag-btn" onClick={handleSubmit} >
+                                Add to Bag
+                            </button>
                         </div>
                         <div className="product-description">
                             <p>{product.description}</p>
