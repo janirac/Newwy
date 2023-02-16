@@ -21,9 +21,11 @@ class Product < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :price, :description, :amount, :color, :condition, :brand, presence: true
 
-    has_many :product_images, dependent: :destroy
-    has_one :category, dependent: :destroy
-    belongs_to :user
+    has_many :product_images,
+        dependent: :destroy
+    has_one :category, 
+        dependent: :destroy
+    # belongs_to :user
 
     has_many :cart_items, 
         dependent: :destroy

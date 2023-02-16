@@ -3,7 +3,6 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {} from '@fortawesome/free-solid-svg-icons'
 import './LoginForm.css'
 
 const errorIcon = <FontAwesomeIcon className='errorIcon' icon="fa-thin fa-square-exclamation" />

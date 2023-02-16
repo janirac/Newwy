@@ -30,7 +30,6 @@ function ProductCard( { product } ) {
     const handleFavoritesButton = (e) => {
         e.preventDefault()
         setIsFavorited(!isFavorited)
-        // console.log(favorite)
 
         return (
             <div>
@@ -44,10 +43,7 @@ function ProductCard( { product } ) {
     }
 
     const handleOnClick = () => {
-        // <NavLink className='product-card-link' to={`/products/${product.id}`}>
-
-        // </NavLink>
-        <Redirect to={`/products/${product.id}`} />
+        history.push(`/products/${product.id}`)
     }
 
     return (
@@ -55,7 +51,7 @@ function ProductCard( { product } ) {
             <button className="img-dropdown-btn" onClick={handleFavoritesButton}>
                 <div className={`heart-icon-index ${isFavorited ? "active" : ""}`}>{heartIcon()}</div>
             </button>
-                <NavLink className='product-card-link' to={`/products/${product.id}`}>
+                {/* <NavLink className='product-card-link' to={`/products/${product.id}`}> */}
                     <div className="product-card-main">
                         <div className="product-card-container">
                             <div className="img-main">
@@ -80,7 +76,7 @@ function ProductCard( { product } ) {
                             </div>
                         </div>
                     </div>
-                </NavLink>
+                {/* </NavLink> */}
         </div>
     )
 }

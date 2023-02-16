@@ -36,7 +36,13 @@ function App() {
           <Route path="/products/:productId">
             <ProductShowPage />
           </Route>
-          <Route path="/category">
+          <Route path="/hotstuff">
+            <ProductIndexPage />
+          </Route>
+          <Route path='/trending'>
+            <ProductIndexPage />
+          </Route>
+          <Route path='/eventsoccasions'>
             <ProductIndexPage />
           </Route>
         </Switch>

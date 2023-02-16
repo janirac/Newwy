@@ -1,7 +1,6 @@
 import React from 'react';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,6 +28,7 @@ function Navigation() {
 
   useEffect(() => {
     dispatch(fetchProducts())
+    dispatch(fetchCartItems())
   }, [])
 
   const handleShoppingCart = (e) => {

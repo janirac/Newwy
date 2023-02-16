@@ -5,7 +5,6 @@ import { exitModalIcon } from "../Navigation"
 
 const CartItems = ({ setShowCart }) => {
     const cartItems = useSelector(state => Object.values(state.cartItems))
-    console.log(cartItems)
 
     return (
         <div className="cart-container">

@@ -75,7 +75,7 @@ export const cartItemsReducer = (state = {}, action) => {
         case RECEIVE_CART_ITEMS:
             return {...action.cartItems};
         case RECEIVE_CART_ITEM:
-            return {...state, [action.cartItem.id]: action.cartItem}
+            return {...state, ['action.cartItem.id']: action.cartItem}
         case REMOVE_CART_ITEM:
             delete newState[action.cartItemId]
             return newState

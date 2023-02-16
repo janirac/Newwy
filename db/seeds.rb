@@ -37,6 +37,12 @@ ApplicationRecord.transaction do
       }) 
     end
 
+    users = User.all
+
+    users.each do |user|
+        Cart.create!(user_id: user.id)
+    end 
+
     puts "Creating products..."
 
     Product.create!( #1
@@ -395,43 +401,52 @@ ApplicationRecord.transaction do
     puts "Creating Category"
 
     Category.create!(
+        product_id: 10,
+        category_ids: [6, 21, 16]
+    )
+    Category.create!(
+        product_id: 9,
+        category_ids: [8, 17, 6, 2, 13, 21]
+    )
+
+    Category.create!(
         product_id: 8,
-        category_ids: [6, 14, 18]
+        category_ids: [6, 14, 18, 21]
     )
 
     Category.create!(
         product_id: 7,
-        category_ids: [17, 13, 2, 6]
+        category_ids: [17, 13, 2, 6, 21]
     )
 
     Category.create!(
         product_id: 6,
-        category_ids: [2, 6, 15]
+        category_ids: [2, 6, 15, 21]
     )
 
     Category.create!(
         product_id: 5,
-        category_ids: [13, 14, 2, 6]
+        category_ids: [13, 14, 2, 6, 21]
     )
 
     Category.create!(
         product_id: 4,
-        category_ids: [12, 6]
+        category_ids: [12, 6, 21]
     )
 
     Category.create!(
         product_id: 3,
-        category_ids: [10, 6, 11]
+        category_ids: [10, 6, 11, 21]
     )
 
     Category.create!(
         product_id: 2,
-        category_ids: [10, 2]
+        category_ids: [10, 2, 21]
     )
 
     Category.create!(
         product_id: 1,
-        category_ids: [6, 9, 8, 2]
+        category_ids: [6, 9, 8, 2, 21]
     )
    
     puts "Done!"

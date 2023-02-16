@@ -29,6 +29,7 @@ class Category < ApplicationRecord
     ACTIVEWEAR = 'Activewear'
     SWIMWEAR = 'Swimwear'
     COSTUMES = 'Costumes'
+    HOT_STUFF = 'Hot Stuff'
 
 
     category_map = {
@@ -51,7 +52,8 @@ class Category < ApplicationRecord
         17 => SHORTS,
         18 => ACTIVEWEAR,
         19 => SWIMWEAR,
-        20 => COSTUMES
+        20 => COSTUMES,
+        21 => HOT_STUFF
     }
 
     def get_all_catogories 

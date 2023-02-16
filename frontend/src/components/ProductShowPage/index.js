@@ -11,6 +11,8 @@ import "./ProductShowPage.css"
 // import { createCartItem } from "../../store/cart";
 import { createCartItem } from "../../store/cartItems";
 import { fetchCart } from "../../store/cart";
+import ReviewShow from "../Reviews/ReviewIndex";
+
 
 export const heartIcon = () => ( 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -24,14 +26,34 @@ function ProductShowPage() {
     const sessionUser = useSelector(state => state.session.user)
     const product = useSelector(getProduct(productId))
     const cart = useSelector(getCart())
-    console.log(cart)
-    // let cartItem = useSelector(getCartItem(productId))
+    const cartItems = useSelector(state => Object.values(state.cartItems))
+    const cartItemsObj = useSelector(state => state.cartItems)
+
     // const favoriteProductId = useSelector(state => state.)\\
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        // const cartItem = {productId} 
-        dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
+        // if(cartItems.length < 1){
+        //     dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
+        // } else {
+        //     cartItems.map((item) => {
+        //         if(item.productId !== parseInt(productId)){
+        //             dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
+        //         } else {
+        //             console.log('cant add')
+        //             return
+        //         }
+        //     })
+        // }
+        let check = false
+        cartItems.map((item) => {
+                    if(item.productId === parseInt(productId)){
+                        check = true 
+                    }
+        })
+        if(check === false){
+            dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
+        }
     }
 
     useEffect(() => {
@@ -46,6 +68,7 @@ function ProductShowPage() {
     }
 
     return (
+            <div>
         <div className="product-show-main">
                 <div className="product-display-photo-main">
                     <ul className="product-display-photo-container">
@@ -121,6 +144,10 @@ function ProductShowPage() {
                 </div>
             </div>
         </div>
+            <div className="review-section">
+                    <ReviewShow />
+            </div>
+            </div>
     )
 }
 

@@ -1,19 +1,21 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getProductId } from "../../store/product"
+import { getProduct } from "../../store/product"
 import { deleteCartItem } from "../../store/cartItems"
 
 const CartItemCard = ( { cartItem } ) => {
     const dispatch = useDispatch()
     const productId = cartItem.productId
-    console.log(productId)
-    const product = useSelector(getProductId(productId))
+    const product = useSelector(getProduct(productId))
 
-    console.log(product)
     const handleClick = (e) => {
         e.preventDefault()
         dispatch(deleteCartItem(cartItem.id))
     }
-    
+
+    if(!product) {
+        return null
+    }
+   
     return (
         <div className="card-item-card">
             <div className="cart-item-card-type">

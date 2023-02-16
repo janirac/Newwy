@@ -18,11 +18,13 @@ const addProduct = (product) => {
 }
 
 export const getProductId = productId => state => {
-    const product = Object.values(state.products).find((product => {
-        if(product.id === productId){
-            return true
+    const product = Object.values(state.products).find((prod => {
+        debugger
+        if(prod.id === productId){
+            return prod
         }
     }))
+    debugger
     return product
 }
 
