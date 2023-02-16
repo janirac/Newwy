@@ -52,7 +52,7 @@ function ProductSlider() {
     return (
         <div>
             <div className='category-section'>
-                <div>
+                <div className='space'>
                     
                 </div>
                 <div className='category-text-container'>

@@ -21,9 +21,13 @@ ul.multiple-product-carousel  > li.react-multi-carousel-item {
     height: 150px;
     align-items: flex-end;
     margin: 0 auto;
-    width: 77vw;
+    width: 73vw;
     display: flex;
     justify-content: space-between;
+}
+
+.space{
+    width: 25px;
 }
 
 .category-text {

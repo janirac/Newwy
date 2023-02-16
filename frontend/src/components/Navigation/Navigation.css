@@ -10,6 +10,7 @@
 
 .main-links {
     display: flex;
+    width: 193px;
 }
 
 .browse-link{
@@ -53,6 +54,11 @@
     letter-spacing: 0.4px;
 }
 
+.logo {
+    width: 193px;
+    margin-right: 25px;
+}
+
 .user-icon {
     color:#785028;
     font-size: 20px;
@@ -94,6 +100,7 @@
 .user-links {
     position: relative; 
     margin-right: 25px;
+
 }
 
 
