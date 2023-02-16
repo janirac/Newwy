@@ -5,7 +5,6 @@ def index
 
     # @favorites = Favorite::llFavoritesForUser(current_user.id)
     # @favorites = []
-    # debugger
     if current_user
         @favorites = Favorite.where(user_id: current_user.id)
     end

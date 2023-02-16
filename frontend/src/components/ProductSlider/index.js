@@ -49,9 +49,6 @@ function ProductSlider() {
         </NavLink>
     ))
 
-    //   console.log(productCards)
-    //   console.log(';;;;;;;;')
-
     return (
         <div>
             <div className='category-section'>

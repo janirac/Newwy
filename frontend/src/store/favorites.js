@@ -26,12 +26,11 @@ const removeFavorite = (favoriteId) => {
 }
 
 export const fetchFavorites = () => async(dispatch) => {
-    // debugger
+
     const response = await csrfFetch(`/api/favorites/`)
 
     const data = await response.json()
     dispatch(setFavorites({data}))
-    // debugger
 }  
 
 // export const fetchFavorite = (productId) => async(dispatch) => {

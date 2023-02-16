@@ -18,7 +18,7 @@ const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGl
 const browseIcon = <FontAwesomeIcon className='browse-icon' icon={faBars} />
 const cartIcon = <FontAwesomeIcon className='shopping-bag' icon={faBagShopping} />
 const userIcon = <FontAwesomeIcon className='user-icon' icon={faUser} />
-const exitModalIcon = <FontAwesomeIcon icon={faX} />
+export const exitModalIcon = <FontAwesomeIcon icon={faX} />
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -206,7 +206,7 @@ function Navigation() {
               </div>
             }
         </div>
-        {showCart && <CartItems />}
+        {showCart && <CartItems setShowCart={setShowCart}/>}
     </nav>
   );
 }

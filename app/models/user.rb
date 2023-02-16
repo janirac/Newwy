@@ -72,7 +72,7 @@ class User < ApplicationRecord
   end
 
   # def self.favorite_products(current_user)
-  #   debugger
+  
   #   favorites = Favorite.where(user_id: current_user.id)
   #   product_ids = favorites.pluck(:product_id)
   #   product_ids

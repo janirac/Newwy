@@ -67,7 +67,6 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json()
     storeCurrentUser(data.user)
     dispatch(setCurrentUser(data.user))
-    // debugger
     // dispatch(fetchFavorites());
     return response;
   }

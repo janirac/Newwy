@@ -49,18 +49,23 @@ function ProductShowPage() {
         <div className="product-show-main">
                 <div className="product-display-photo-main">
                     <ul className="product-display-photo-container">
+                    {product.images.map(image => (
                         <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src="https://via.placeholder.com/500"/>
+                            <img className='img-dropdown-showpage' src={image.imageUrl}/>
+                        </li>
+                    ))}
+                        {/* <li className="product-display-photo">
+                            <img className='img-dropdown-showpage' src={product.images[0].imageUrl}/>
                         </li>
                         <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src="https://via.placeholder.com/500"/>
+                            <img className='img-dropdown-showpage' src={product.images[1].imageUrl}/>
                         </li>
                         <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src="https://via.placeholder.com/500"/>
+                            <img className='img-dropdown-showpage' src={product.images[2].imageUrl}/>
                         </li>
                         <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src="https://via.placeholder.com/500"/>
-                        </li>
+                            <img className='img-dropdown-showpage' src={product.images[3].imageUrl}/>
+                        </li> */}
                     </ul>
                 </div>
             <div className="product-info-main">

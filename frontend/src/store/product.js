@@ -17,10 +17,18 @@ const addProduct = (product) => {
     }
 }
 
+export const getProductId = productId => state => {
+    const product = Object.values(state.products).find((product => {
+        if(product.id === productId){
+            return true
+        }
+    }))
+    return product
+}
+
 export const getProduct = productId => state => {
     return state?.products ? state.products[productId] : null;
 }
-
   
 export const fetchProducts = () => async dispatch => {
     const response = await csrfFetch('/api/products')

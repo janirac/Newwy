@@ -20,9 +20,8 @@ class Api::ReviewsController < ApplicationController
     end
     
     def update
-        debugger
         @review = current_user.reviews.find(params[:id])
-        debugger
+        
         if @review.update(review_params)
         else
           render :edit

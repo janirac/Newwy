@@ -2,7 +2,7 @@ import { heartIcon } from "../ProductShowPage";
 import "./ProductIndexPage.css"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, Redirect, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createFavorite, deleteFavorite, fetchFavorites } from "../../store/favorites";
 import { useState, useEffect } from "react";
@@ -47,16 +47,15 @@ function ProductCard( { product } ) {
         // <NavLink className='product-card-link' to={`/products/${product.id}`}>
 
         // </NavLink>
-        
+        <Redirect to={`/products/${product.id}`} />
     }
 
-    // debugger
     return (
         <div className="product-card">
             <button className="img-dropdown-btn" onClick={handleFavoritesButton}>
                 <div className={`heart-icon-index ${isFavorited ? "active" : ""}`}>{heartIcon()}</div>
             </button>
-                {/* <NavLink className='product-card-link' to={`/products/${product.id}`}> */}
+                <NavLink className='product-card-link' to={`/products/${product.id}`}>
                     <div className="product-card-main">
                         <div className="product-card-container">
                             <div className="img-main">
@@ -81,9 +80,10 @@ function ProductCard( { product } ) {
                             </div>
                         </div>
                     </div>
-                {/* </NavLink> */}
+                </NavLink>
         </div>
     )
 }
 
 export default ProductCard;
+

@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux"
-import { getProduct } from "../../store/product"
+import { getProductId } from "../../store/product"
 import { deleteCartItem } from "../../store/cartItems"
 
 const CartItemCard = ( { cartItem } ) => {
     const dispatch = useDispatch()
     const productId = cartItem.productId
-    const product = useSelector(getProduct(productId))
+    console.log(productId)
+    const product = useSelector(getProductId(productId))
 
+    console.log(product)
     const handleClick = (e) => {
         e.preventDefault()
         dispatch(deleteCartItem(cartItem.id))
@@ -14,12 +16,14 @@ const CartItemCard = ( { cartItem } ) => {
     
     return (
         <div className="card-item-card">
-            <img className="cart-image-show" src={product.images[0].imageUrl}/>
-            <div className="cart-description">
-                <div>{product.name}</div>
-                <div>{product.size}</div>
-                <div>{product.condition}</div>
-                <div>{product.price}</div>
+            <div className="cart-item-card-type">
+                <img className="cart-image-show" src={product.images[0].imageUrl}/>
+                <div className="cart-description">
+                    <div>{product.name}</div>
+                    <div>{product.size}</div>
+                    <div>{product.condition}</div>
+                    <div>{product.price}</div>
+                </div>
             </div>
             <button className="cart-item-btn" onClick={handleClick}>Remove</button>
         </div>

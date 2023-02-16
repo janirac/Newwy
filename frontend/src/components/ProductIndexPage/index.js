@@ -1,8 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchFavorites } from "../../store/favorites"
 import { fetchProducts } from "../../store/product"
-import { useMemo } from "react"
 import ProductCard from "./ProductCard"
 import "./ProductIndexPage.css"
 
