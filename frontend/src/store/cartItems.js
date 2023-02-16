@@ -53,7 +53,6 @@ export const createCartItem = cartItem => async (dispatch) => {
 }
 
 export const deleteCartItem = cartItemId => async (dispatch) => {
-    debugger
     const response = await csrfFetch(`/api/cart_items/${cartItemId}`, {
         method: "DELETE"
     })
