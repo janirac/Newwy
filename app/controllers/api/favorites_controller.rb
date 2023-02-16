@@ -1,37 +1,31 @@
 class Api::FavoritesController < ApplicationController
 
 def index
-    # @favorites = Favorite.all()
-
-    # @favorites = Favorite::llFavoritesForUser(current_user.id)
-    # @favorites = []
     if current_user
-        @favorites = Favorite.where(user_id: current_user.id)
+        @favorites = current_user.favorites.includes(:product)
+        render 'api/favorites/index'
     end
-    # @favorites = User.favorite_products
-    render json: @favorites
-    # api/favorites/index'
 end
 
 def create
+    debugger
     @favorite = Favorite.new(favorite_params)
    
-    if !@favorite.save
+    if !@favorite.save!
         render json: @favorite.errors, status: :unprocessable_entity
+    else
+        render :show
     end 
-
-    render :show
-
 end
 
 def destroy
-    @favorite = current_user.favorites.find(params[:id])
+    @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    
 end 
 
 private
     def favorite_params
-        params.require(:favorite).permit(:product_id)
+        debugger
+        params.require(:favorite).permit(:product_id, :user_id)
     end
 end

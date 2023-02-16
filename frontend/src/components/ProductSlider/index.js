@@ -59,6 +59,26 @@ function ProductSlider() {
         }
     })
 
+    const trendingProducts = products.map((product) => {
+        if(product.categories[0].indexOf(23) > -1){
+            return (
+                <NavLink className='product-card-link' to={`/products/${product.id}`}>
+                    <ProductCard product={product} key={product.id} />
+                </NavLink>
+            )
+        }
+    })
+
+    const eventsProducts = products.map((product) => {
+        if(product.categories[0].indexOf(22) > -1){
+            return (
+                <NavLink className='product-card-link' to={`/products/${product.id}`}>
+                    <ProductCard product={product} key={product.id} />
+                </NavLink>
+            )
+        }
+    })
+
     return (
         <div>
             <div className='category-section'>
@@ -105,7 +125,7 @@ function ProductSlider() {
             </div>
             <div className='carousel-main'>
                 <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
-                    {productCards}
+                    {eventsProducts}
                 </Carousel>;
             </div>
             <div className='category-section'>
@@ -120,13 +140,15 @@ function ProductSlider() {
                         <h3 className='category-sub-text'>Across Nuuly Thrift</h3>
                     </div>
                 </div>
-                <div className='view-all-link'>
-                    <h3>view all</h3>
-                </div>
+                <NavLink className='view-all-link' to="/trending" >
+                    <div className='view-all-link'>
+                        <h3>view all</h3>
+                    </div>
+                </NavLink>
             </div>
             <div className='carousel-main'>
                 <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
-                    {productCards}
+                    {trendingProducts}
                 </Carousel>;
             </div>
         </div>

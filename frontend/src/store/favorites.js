@@ -30,7 +30,7 @@ export const fetchFavorites = () => async(dispatch) => {
     const response = await csrfFetch(`/api/favorites/`)
 
     const data = await response.json()
-    dispatch(setFavorites({data}))
+    dispatch(setFavorites(data))
 }  
 
 // export const fetchFavorite = (productId) => async(dispatch) => {
@@ -55,7 +55,7 @@ export const createFavorite = (favorite) => async(dispatch) => {
     })
 
     const data = await response.json()
-    dispatch(addFavorite(data.favorite))
+    dispatch(addFavorite(data))
 }
 
 
@@ -63,12 +63,9 @@ const favoritesReducer = (state = {}, action) => {
     const newState = {...state}
     switch(action.type){
         case SET_FAVORITES:
-            return {...newState, ...action.favorites}
+            return {...action.favorites}
         case ADD_FAVORITE:
             newState[action.favorite.id] = action.favorite
-            return newState
-        case REMOVE_FAVORITE:
-            delete newState[action.favoriteId]
             return newState
         case REMOVE_FAVORITE:
             delete newState[action.favoriteId]
