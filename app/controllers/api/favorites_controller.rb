@@ -8,14 +8,15 @@ def index
 end
 
 def create
-    debugger
-    @favorite = Favorite.new(favorite_params)
-   
-    if !@favorite.save!
-        render json: @favorite.errors, status: :unprocessable_entity
-    else
-        render :show
+    if !@favorite
+        @favorite = Favorite.new(favorite_params)
+        @favorite.save!
     end 
+   
+    # if !@favorite.save!
+    #     render json: @favorite.errors, status: :unprocessable_entity
+    # else
+        render :show
 end
 
 def show 
@@ -29,7 +30,6 @@ end
 
 private
     def favorite_params
-        debugger
         params.require(:favorite).permit(:product_id, :user_id)
     end
 end

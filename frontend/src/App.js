@@ -9,6 +9,7 @@ import Hero from "./components/Hero";
 import ProductShowPage from "./components/ProductShowPage";
 import ProductIndexPage from "./components/ProductIndexPage"
 import ProductSlider from "./components/ProductSlider";
+import Favorites from "./components/Favorites";
 
 
 function App() {
@@ -30,9 +31,9 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          {/* <Route path='/category/'>
-            
-          </Route> */}
+          <Route path='/profile'>
+              <Favorites />
+          </Route>
           <Route path="/products/:productId">
             <ProductShowPage />
           </Route>

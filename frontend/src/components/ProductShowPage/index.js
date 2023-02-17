@@ -96,7 +96,7 @@ function ProductShowPage() {
                     <div className="product-info-label">
                         <div className="product-seller-info">
                             <div className="profile-photo-username">
-                                <img className='img-dropdown-profile-photo' src="https://via.placeholder.com/50"/>
+                                <img className='img-dropdown-profile-photo' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/>
                                 <p>username</p>
                             </div>
                             {/* <div className="favorite-button-main">

@@ -11,8 +11,8 @@ import { fetchCartItems } from '../../store/cartItems';
 import { fetchProducts } from '../../store/product';
 import { useEffect } from 'react';
 
-const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
-const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
+export const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
+export const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
 const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
 const browseIcon = <FontAwesomeIcon className='browse-icon' icon={faBars} />
 const cartIcon = <FontAwesomeIcon className='shopping-bag' icon={faBagShopping} />
@@ -46,7 +46,7 @@ function Navigation() {
             onMouseEnter={() => setshowUserDropdown(true)}
             onMouseLeave={() => setshowUserDropdown(false)}
             >
-              <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
+              <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
               <p className='signin-text-dropdown'>Sign In</p>
               <div className='middle-dropdown'>
                 <p className='middle-dropdown-text'>Buy what you love, sell what someone else will love. Repeat</p>
@@ -82,9 +82,9 @@ function Navigation() {
             onMouseLeave={() => setshowUserDropdown(false)}
             >
               <div className='profile-btn-main'>
-                <NavLink className='profile-btn-main-link' to='/'>
+                <NavLink className='profile-btn-main-link' to='/profile'>
                   <button className='profile-btn'>
-                    <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
+                    <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
                     <div className='profile-btn-view'>
                       <h4 className='profile-name'>{sessionUser.email}</h4>
                       <div className='view-name'>View</div>

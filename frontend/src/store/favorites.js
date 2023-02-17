@@ -54,7 +54,6 @@ export const deleteFavorite = (favoriteId) => async(dispatch) => {
 }  
 
 export const createFavorite = (favorite) => async(dispatch) => {
-    debugger
     const response = await csrfFetch(`/api/favorites`, {
         method: 'POST',
         body: JSON.stringify(favorite)

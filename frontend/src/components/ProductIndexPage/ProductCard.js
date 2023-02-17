@@ -2,9 +2,9 @@ import { heartIcon } from "../ProductShowPage";
 import "./ProductIndexPage.css"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Link, NavLink, Redirect, useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createFavorite, deleteFavorite, fetchFavorites, getFavorite } from "../../store/favorites";
+import { createFavorite, deleteFavorite } from "../../store/favorites";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,11 @@ function ProductCard( { product } ) {
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user);
     
-    const favorite = useSelector(getFavorite(product.id))
+    let favorite = favorites.find((currFavorite) => {
+        if(currFavorite.productId === product.id) {
+            return currFavorite
+        }
+    })
 
     const mainImage = product.images[0] ? product.images[0].imageUrl : "www.google.com/img.png"
     const responsive = {
@@ -26,9 +30,21 @@ function ProductCard( { product } ) {
     };
     const hasManyImages = product.images.length > 0
     const location = useLocation()
-    const locationIndex = location.pathname === "/" 
-    
-    const [isFavorited, setIsFavorited] = useState(false)
+    const locationIndex = location.pathname === "/"
+
+    const [isFavorited, setIsFavorited] = useState(!!favorite)
+   
+
+    useEffect(() => {
+        const updatedFavorite = favorites.find((currFavorite) => {
+            if(currFavorite.productId === product.id) {
+                return currFavorite
+            }
+        })
+        setIsFavorited(!!updatedFavorite);
+
+
+    }, [])
 
     const handleFavoritesButton = (e) => {
         e.preventDefault()
