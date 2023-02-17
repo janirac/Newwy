@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Navigation.css';
 import { useState } from 'react';
@@ -25,6 +25,7 @@ function Navigation() {
   const [showUserDropdown, setshowUserDropdown] = useState(false);
   const location = useLocation()
   const [showCart, setShowCart] = useState(false)
+  const history = useHistory()
 
   useEffect(() => {
     dispatch(fetchProducts())
@@ -33,9 +34,13 @@ function Navigation() {
 
   const handleShoppingCart = (e) => {
     e.preventDefault()
-  
-    showCart ? setShowCart(false) : setShowCart(true)
-    dispatch(fetchCartItems())
+
+    if(!sessionUser){
+      history.push(`/login`)
+    } else {
+      showCart ? setShowCart(false) : setShowCart(true)
+      dispatch(fetchCartItems())
+    }
   }
   
   const userLoginDropdown = () => {
@@ -45,6 +50,7 @@ function Navigation() {
             <div className='user-dropdown'
             onMouseEnter={() => setshowUserDropdown(true)}
             onMouseLeave={() => setshowUserDropdown(false)}
+            onClick={() => setshowUserDropdown(false)}
             >
               <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
               <p className='signin-text-dropdown'>Sign In</p>

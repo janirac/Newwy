@@ -55,3 +55,9 @@
     position: absolute;
     bottom: -33px;
 }
+
+.footer-personal-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}

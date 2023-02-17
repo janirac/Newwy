@@ -29,14 +29,15 @@
     width: 45%;
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 800px;
     position: sticky;
     top: 0;
+    font-family: sans-serif;
 }
 
 .product-info-container {
     width: 400px;
-    height: 550px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,6 +48,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 .product-seller-info {
@@ -59,7 +61,9 @@
 .img-dropdown-profile-photo {
     margin-right: 15px;
     border-radius: 50%;
+    width: 60px;
 }
+
 
 .profile-photo-username {
     display: flex;
@@ -74,7 +78,7 @@
 }
 
 .product-cart-description {
-    height: 130px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -103,6 +107,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: grey;
 }
 .favorite-button-main {
     display: flex;
@@ -137,5 +142,34 @@
 
 .favorite-button:hover {
     border: 1px solid #785028;
+}
+
+
+.product-name {
+    font-family: 'FontAwesome';
+    font-size: 20px;
+}
+
+.product-price {
+    font-weight: 900;
+}
+
+.size {
+    font-size: 13px;
+}
+
+.product-description {
+    margin-top: 21px;
+    font-family: system-ui;
+    height: max-content;
+    line-height: 1.5;
+}
+
+.product-description-depth {
+    margin-top: 15px;
+}
+
+.product-color {
+    display: flex;
 }
 

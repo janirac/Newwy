@@ -15,6 +15,9 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
   const [emailClick, setEmailClick] = useState(false)
 
+  const emailError = errors.find(error => error.toLowerCase().includes('email'))
+  const passwordError = errors.find(error => error.toLowerCase().startsWith('password '))
+
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
@@ -59,7 +62,6 @@ function LoginFormPage() {
       <form className='login-form' onSubmit={handleSubmit}>
         <div className="email-input-section">
           <input
-            // onClick={setClickedInput}
             className='email-input'
             type="text" //should I put email or text
             value={credential}
@@ -69,9 +71,9 @@ function LoginFormPage() {
           <div className='email-input-text'>
             Email*
           </div>
-          <ul className='error-handling'>
-            {errorIcon}
-            {errors.map(error => <li key={error}>{error}</li>)}
+          <ul className='email-error-handling'>
+            {emailError ? <i class="fa-solid fa-circle-exclamation"></i> : " "}
+            {emailError}
           </ul>
         </div>
         <div className='password-input-section'>
@@ -83,9 +85,10 @@ function LoginFormPage() {
           required
           placeholder='Password*'
           />
-          {/* <div className='password-input-text'>
-            Password*
-          </div> */}
+          <ul className='pass-error-handling'>
+            {passwordError ? <i class="fa-solid fa-circle-exclamation"></i> : ""}
+            {passwordError}
+          </ul>
         </div>
         <button className='submit-btn' type="submit">Sign In</button>
       </form>

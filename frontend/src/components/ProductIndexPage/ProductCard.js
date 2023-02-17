@@ -43,8 +43,7 @@ function ProductCard( { product } ) {
         })
         setIsFavorited(!!updatedFavorite);
 
-
-    }, [])
+    }, [favorites])
 
     const handleFavoritesButton = (e) => {
         e.preventDefault()

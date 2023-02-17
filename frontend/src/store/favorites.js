@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 const SET_FAVORITES ='/favorites/setFavorites'
 const REMOVE_FAVORITE ='/favorites/removeFavorite'
 const ADD_FAVORITE ='/favorites/addFavorite'
+const RESET_FAVORITES = '/resetFavorites'
 
 const setFavorites = (favorites) => {
     return {
@@ -15,6 +16,13 @@ const addFavorite = (favorite) => {
     return {
         type: ADD_FAVORITE,
         favorite
+    }
+}
+
+const resetFavorites = () => {
+    return {
+        type: RESET_FAVORITES,
+        favorites: {}
     }
 }
 
@@ -64,6 +72,10 @@ export const createFavorite = (favorite) => async(dispatch) => {
 }
 
 
+export const resetFavoritesObj = () => async dispatch => {
+    dispatch(resetFavorites())
+}
+
 const favoritesReducer = (state = {}, action) => {
     const newState = {...state}
     switch(action.type){
@@ -75,6 +87,8 @@ const favoritesReducer = (state = {}, action) => {
         case REMOVE_FAVORITE:
             delete newState[action.favoriteId]
             return newState
+        case RESET_FAVORITES:
+            return {}
         default:
             return state
     }

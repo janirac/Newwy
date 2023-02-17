@@ -12,7 +12,7 @@ import "./ProductShowPage.css"
 import { createCartItem } from "../../store/cartItems";
 import { fetchCart } from "../../store/cart";
 import ReviewShow from "../Reviews/ReviewIndex";
-
+import { useHistory } from "react-router-dom";
 
 export const heartIcon = () => ( 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -28,23 +28,16 @@ function ProductShowPage() {
     const cart = useSelector(getCart())
     const cartItems = useSelector(state => Object.values(state.cartItems))
     const cartItemsObj = useSelector(state => state.cartItems)
+const history = useHistory()
+
 
     // const favoriteProductId = useSelector(state => state.)\\
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        // if(cartItems.length < 1){
-        //     dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
-        // } else {
-        //     cartItems.map((item) => {
-        //         if(item.productId !== parseInt(productId)){
-        //             dispatch(createCartItem({cartItem: {productId, cartId: cart.id}}))
-        //         } else {
-        //             console.log('cant add')
-        //             return
-        //         }
-        //     })
-        // }
+        if(!sessionUser){
+            history.push(`/login`)
+        }
         let check = false
         cartItems.map((item) => {
                     if(item.productId === parseInt(productId)){
@@ -77,18 +70,6 @@ function ProductShowPage() {
                             <img className='img-dropdown-showpage' src={image.imageUrl}/>
                         </li>
                     ))}
-                        {/* <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src={product.images[0].imageUrl}/>
-                        </li>
-                        <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src={product.images[1].imageUrl}/>
-                        </li>
-                        <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src={product.images[2].imageUrl}/>
-                        </li>
-                        <li className="product-display-photo">
-                            <img className='img-dropdown-showpage' src={product.images[3].imageUrl}/>
-                        </li> */}
                     </ul>
                 </div>
             <div className="product-info-main">
@@ -97,20 +78,12 @@ function ProductShowPage() {
                         <div className="product-seller-info">
                             <div className="profile-photo-username">
                                 <img className='img-dropdown-profile-photo' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/>
-                                <p>username</p>
+                                <p>{sessionUser ? sessionUser.email : product.brand}</p>
                             </div>
-                            {/* <div className="favorite-button-main">
-                                <Favorites>
-                                    <button className="favorite-button">
-                                        <div className="favorite-number">23</div>
-                                        <div className="favorite-heart">{heartIcon()}</div>
-                                    </button>
-                                </Favorites>
-                            </div> */}
                         </div>
                         <div className="product-title-price-size">
                             <div className="product-name">{product.name}</div>
-                            <div className="product-price">{product.price}</div>
+                            <div className="product-price">${product.price}</div>
                             <div className="size">Size: {product.size}</div>
                         </div>
                     </div>

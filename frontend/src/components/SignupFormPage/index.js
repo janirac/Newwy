@@ -43,8 +43,8 @@ function SignupFormPage() {
       <h3 className="text-one-login">
       Buy what you love, sell what someone else will love. Repeat.
       </h3>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <ul>
+      <form className="sign-in-form" onSubmit={handleSubmit}>
+        <ul className="sign-up-errors">
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
         <div className='email-input-section'>
@@ -68,9 +68,6 @@ function SignupFormPage() {
           required
           placeholder="Password*"
           />
-          {/* <div className="password-input-text">
-            Password*
-          </div> */}
         </div>
         <div className="password-input-section">
           <input
@@ -81,9 +78,6 @@ function SignupFormPage() {
             required
             placeholder="Confirm Password*"
             />
-          {/* <div className="password-input-text">
-            Confirm Password*
-          </div> */}
         </div>
         <button className="submit-btn" type="submit">Sign Up</button>
         <text className="footer-text">
