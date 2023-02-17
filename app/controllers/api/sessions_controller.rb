@@ -1,4 +1,5 @@
 class Api::SessionsController < ApplicationController
+
   def show
     @user = current_user 
 
@@ -11,21 +12,19 @@ class Api::SessionsController < ApplicationController
 
   def create
     credentials = params[:credential]
-      password = params[:password]
+    password = params[:password]
 
-      @user = User.find_by_credentials(credentials, password)
+    @user = User.find_by_credentials(credentials, password)
 
-    puts credentials
-    puts "---------"
-    puts password
-    puts "----------"
-    puts @user
-
-      if @user&.save
+      if @user
          login!(@user)
          render 'api/users/show'
       else 
-         render json: {errors: ['The provided credentials were invalid'] }, status: :unauthorized
+         if User.find_by(email: params[:credential])
+            render json: {errors: ["Password was incorrect"]}, status: :unauthorized
+         else
+            render json: {errors: [" We couldn't find an account associated with this email address"] }, status: :unauthorized
+         end 
       end 
   end
 

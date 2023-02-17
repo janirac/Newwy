@@ -1,26 +1,47 @@
 import React from 'react';
-import { NavLink, useLocation, useParams } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faX, faBagShopping, faBars, faMagnifyingGlass, faGear, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 import * as sessionActions from "../../store/session"
+import CartItems from '../Cart/CartIndex';
+import { fetchCartItems } from '../../store/cartItems';
+import { fetchProducts } from '../../store/product';
+import { useEffect } from 'react';
 
-const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
-const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
+export const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
+export const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
 const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
 const browseIcon = <FontAwesomeIcon className='browse-icon' icon={faBars} />
 const cartIcon = <FontAwesomeIcon className='shopping-bag' icon={faBagShopping} />
 const userIcon = <FontAwesomeIcon className='user-icon' icon={faUser} />
-const exitModalIcon = <FontAwesomeIcon icon={faX} />
+export const exitModalIcon = <FontAwesomeIcon icon={faX} />
 
 function Navigation() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [showUserDropdown, setshowUserDropdown] = useState(false);
   const location = useLocation()
+  const [showCart, setShowCart] = useState(false)
+  const history = useHistory()
+
+  useEffect(() => {
+    dispatch(fetchProducts())
+    dispatch(fetchCartItems())
+  }, [])
+
+  const handleShoppingCart = (e) => {
+    e.preventDefault()
+
+    if(!sessionUser){
+      history.push(`/login`)
+    } else {
+      showCart ? setShowCart(false) : setShowCart(true)
+      dispatch(fetchCartItems())
+    }
+  }
   
   const userLoginDropdown = () => {
 
@@ -29,8 +50,9 @@ function Navigation() {
             <div className='user-dropdown'
             onMouseEnter={() => setshowUserDropdown(true)}
             onMouseLeave={() => setshowUserDropdown(false)}
+            onClick={() => setshowUserDropdown(false)}
             >
-              <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
+              <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
               <p className='signin-text-dropdown'>Sign In</p>
               <div className='middle-dropdown'>
                 <p className='middle-dropdown-text'>Buy what you love, sell what someone else will love. Repeat</p>
@@ -66,9 +88,9 @@ function Navigation() {
             onMouseLeave={() => setshowUserDropdown(false)}
             >
               <div className='profile-btn-main'>
-                <NavLink className='profile-btn-main-link' to='/'>
+                <NavLink className='profile-btn-main-link' to='/profile'>
                   <button className='profile-btn'>
-                    <img className='img-dropdown' src="https://via.placeholder.com/50"/> 
+                    <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
                     <div className='profile-btn-view'>
                       <h4 className='profile-name'>{sessionUser.email}</h4>
                       <div className='view-name'>View</div>
@@ -183,11 +205,14 @@ function Navigation() {
                   >
                   {userIcon}
                 </span>
-                {cartIcon}
+                <button className='button-cart-icon' onClick={handleShoppingCart}>
+                  {cartIcon}
+                </button>
                 {sessionLinks}
               </div>
             }
         </div>
+        {showCart && <CartItems setShowCart={setShowCart}/>}
     </nav>
   );
 }

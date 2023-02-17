@@ -1,0 +1,53 @@
+ul.multiple-product-carousel  > li.react-multi-carousel-item {
+    margin: 0 10px;
+    width: 280px !important;
+        /* margin: 0 10px;
+        width: 336px !important; */
+}
+
+.react-multi-carousel-list {
+    margin: 0 auto;
+    width: 78vw;
+}
+
+/* .carousel-main {
+    /* margin-top: 150px; */
+
+.single-product-carousel {
+    width: 336px;
+}
+
+.category-section {
+    height: 150px;
+    align-items: flex-end;
+    margin: 0 auto;
+    width: 73vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.space{
+    width: 25px;
+}
+
+.category-text {
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.category-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-sub-text{
+    margin-bottom: 35px;
+}
+
+.view-all-link {
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #785028;
+}

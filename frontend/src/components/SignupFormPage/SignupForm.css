@@ -61,3 +61,16 @@
     cursor: pointer;
     color: #785028;
 }
+
+.sign-in-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 328px;
+    justify-content: space-between;
+}
+
+.sign-up-errors{
+    color: #785028;
+}

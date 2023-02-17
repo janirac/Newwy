@@ -1,4 +1,7 @@
+import { fetchCartItems } from './cartItems';
 import csrfFetch from './csrf';
+import { fetchFavorites, resetFavoritesObj } from './favorites';
+
 
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
@@ -21,7 +24,7 @@ const storeCSRFToken = response => {
     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 }
 
-const storeCurrentUser = user => {
+export const storeCurrentUser = user => {
     if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
     else sessionStorage.removeItem("currentUser");
 }
@@ -34,6 +37,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
+    dispatch(fetchCartItems())
     // return response;
   };
 
@@ -49,6 +53,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json();
     storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
+    dispatch(fetchCartItems())
     return response;
   };
 
@@ -63,6 +68,7 @@ export const login = ({ credential, password }) => async dispatch => {
     const data = await response.json()
     storeCurrentUser(data.user)
     dispatch(setCurrentUser(data.user))
+    // dispatch(fetchFavorites());
     return response;
   }
 
@@ -72,6 +78,7 @@ export const login = ({ credential, password }) => async dispatch => {
     });
     storeCurrentUser(null);
     dispatch(removeCurrentUser());
+    dispatch(resetFavoritesObj())
     return response;
   };
 
@@ -83,6 +90,7 @@ export const login = ({ credential, password }) => async dispatch => {
     dispatch(setCurrentUser(data.user));
     return response;
   };
+
 
 const initialState = { 
   user: JSON.parse(sessionStorage.getItem("currentUser"))

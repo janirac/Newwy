@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './LoginForm.css'
+
+const errorIcon = <FontAwesomeIcon className='errorIcon' icon="fa-thin fa-square-exclamation" />
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -11,6 +14,9 @@ function LoginFormPage() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
   const [emailClick, setEmailClick] = useState(false)
+
+  const emailError = errors.find(error => error.toLowerCase().includes('email'))
+  const passwordError = errors.find(error => error.toLowerCase().startsWith('password '))
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -54,34 +60,35 @@ function LoginFormPage() {
         Already Have an Account?
         </h3>
       <form className='login-form' onSubmit={handleSubmit}>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
         <div className="email-input-section">
           <input
-            // onClick={setClickedInput}
             className='email-input'
             type="text" //should I put email or text
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required //optional
-          />
+            />
           <div className='email-input-text'>
             Email*
           </div>
+          <ul className='email-error-handling'>
+            {emailError ? <i class="fa-solid fa-circle-exclamation"></i> : " "}
+            {emailError}
+          </ul>
         </div>
         <div className='password-input-section'>
           <input
           className='password-input'
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder='Password*'
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          placeholder='Password*'
           />
-          {/* <div className='password-input-text'>
-            Password*
-          </div> */}
+          <ul className='pass-error-handling'>
+            {passwordError ? <i class="fa-solid fa-circle-exclamation"></i> : ""}
+            {passwordError}
+          </ul>
         </div>
         <button className='submit-btn' type="submit">Sign In</button>
       </form>

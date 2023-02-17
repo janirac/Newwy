@@ -1,0 +1,175 @@
+.product-show-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-display-photo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-display-photo-main {
+    width: 55%;
+}
+
+.product-display-photo {
+    width: 50%;
+    height: 50%;
+}
+
+.img-dropdown-showpage {
+    width: 100%;
+    height: 100%;
+}
+
+.product-info-main {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    position: sticky;
+    top: 0;
+    font-family: sans-serif;
+}
+
+.product-info-container {
+    width: 400px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info-label {
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.product-seller-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 62px;
+    align-items: center;
+}
+
+.img-dropdown-profile-photo {
+    margin-right: 15px;
+    border-radius: 50%;
+    width: 60px;
+}
+
+
+.profile-photo-username {
+    display: flex;
+    align-items: center;
+}
+
+.product-title-price-size {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    justify-content: space-between;
+}
+
+.product-cart-description {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-add-bag-btn {
+    background-color: #785028;
+    color: #fff;
+    padding: 4px 48px;
+    font-family: sans-serif;
+    border: #785028;
+    cursor: pointer;
+    width: 100%;
+    height: 38px;
+    border-radius: 2px;
+}
+
+.product-add-bag-btn:hover {
+    background-color: transparent;
+    color: #785028;
+    border: 2px solid #785028;
+}
+
+.product-description-brand-condition-color-price{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: grey;
+}
+.favorite-button-main {
+    display: flex;
+    width: 61px;
+    height: 24px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.favorite-button {
+    display: flex;
+    flex-direction: row;
+    height: 28px;
+    width: 61px;
+    border-radius: 15px;
+    background-color: white;
+    border: white;
+    align-items: center;
+    cursor: pointer;
+}
+
+.favorite-number {
+    width: 27px;
+    height: 15px;
+}
+
+.favorite-heart {
+    width: 18px;
+    color: #785028;
+    height: 17px;
+}
+
+.favorite-button:hover {
+    border: 1px solid #785028;
+}
+
+
+.product-name {
+    font-family: 'FontAwesome';
+    font-size: 20px;
+}
+
+.product-price {
+    font-weight: 900;
+}
+
+.size {
+    font-size: 13px;
+}
+
+.product-description {
+    margin-top: 21px;
+    font-family: system-ui;
+    height: max-content;
+    line-height: 1.5;
+}
+
+.product-description-depth {
+    margin-top: 15px;
+}
+
+.product-color {
+    display: flex;
+}
+

@@ -21,6 +21,31 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_many :favorites,
+    dependent: :destroy
+
+  has_many :favorite_products, 
+    through: :favorites, 
+    source: :product,
+    dependent: :destroy
+    
+  # has_many :products, 
+  #   dependent: :destroy
+
+  has_one :cart, 
+    dependent: :destroy
+    
+  has_many :cart_items, 
+      through: :cart,
+      dependent: :destroy
+
+  has_many :reviews,
+    dependent: :destroy
+    
+  def favorited_product?(product)
+    favorite_products.include?(product)
+  end
+
   def self.find_by_credentials(credential, password)
     if URI::MailTo::EMAIL_REGEXP.match?(credential)
       person = User.find_by(email: credential)
@@ -47,6 +72,13 @@ class User < ApplicationRecord
     self.update!(session_token: generate_unique_session_token)
     self.session_token
   end
+
+  # def self.favorite_products(current_user)
+  
+  #   favorites = Favorite.where(user_id: current_user.id)
+  #   product_ids = favorites.pluck(:product_id)
+  #   product_ids
+  # end 
 
   private
 

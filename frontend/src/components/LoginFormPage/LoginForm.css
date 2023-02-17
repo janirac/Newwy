@@ -6,6 +6,7 @@
   width: 650px;
   margin: 0 auto;
   align-items: center;
+  height: 574px;
 }
 
 .img-login {
@@ -17,8 +18,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
 }
+
 
 .email-input-section {
   width: 100%;
@@ -51,32 +53,17 @@ input:focus {
   height: 30px;
   width: 100%; 
   background-color: transparent;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .email-input-text {
   position: absolute;
   pointer-events: none;
   color: #747176;
-  /* left: 20px;
-  top: 18px; */
   bottom: 39px;
   transition: 0.2s ease all;
   margin-left: 3px;
 }
-
-
-/* .email-input:focus {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-.email-input-text {
-  transform: translateY(-24px);
-  transition: all .18s ease-out;
-  will-change: transform,color,font-size;
-} */
 
 .password-input-section {
   width: 100%;
@@ -90,7 +77,7 @@ input:focus {
   height: 30px;
   width: 100%; 
   background-color: transparent;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 input:focus:placeholder{
@@ -100,7 +87,17 @@ input:focus:placeholder{
 .password-input-text {
   position: absolute;
   pointer-events: none;
-  bottom: 50px;
+  bottom: 30px;
+}
+
+.email-error-handling {
+  color: #785028;
+  margin-bottom: 30px;
+}
+
+.pass-error-handling {
+  color: #785028;
+  margin-bottom: 40px;
 }
 
 .submit-btn {
