@@ -2,9 +2,9 @@ import { heartIcon } from "../ProductShowPage";
 import "./ProductIndexPage.css"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Link, NavLink, Redirect, useLocation } from "react-router-dom";
+import { Link, NavLink, Redirect, useLocation, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createFavorite, deleteFavorite, fetchFavorites } from "../../store/favorites";
+import { createFavorite, deleteFavorite, fetchFavorites, getFavorite } from "../../store/favorites";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -13,13 +13,16 @@ function ProductCard( { product } ) {
     const dispatch = useDispatch()
     const favorites = useSelector(state => Object.values(state.favorites));
     const history = useHistory()
+    const sessionUser = useSelector(state => state.session.user);
+    
+    const favorite = useSelector(getFavorite(product.id))
 
     const mainImage = product.images[0] ? product.images[0].imageUrl : "www.google.com/img.png"
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
           items: 1
-        }
+        }  
     };
     const hasManyImages = product.images.length > 0
     const location = useLocation()
@@ -29,17 +32,17 @@ function ProductCard( { product } ) {
 
     const handleFavoritesButton = (e) => {
         e.preventDefault()
-        setIsFavorited(!isFavorited)
-
-        return (
-            <div>
-
-            </div>
-            // <button className="img-dropdown-btn" onClick={handleFavoritesButton}>
-            //     {/* {isFavorited ? 'Remove from Favorites' : 'Add to Favorites'} */}
-            //     <div className="heart-icon-index">{heartIcon()}</div>
-            // </button>
-        )
+        if(sessionUser){
+            const sessionUserId = sessionUser.id
+            setIsFavorited(!isFavorited)
+            if(isFavorited){
+                dispatch(deleteFavorite(favorite.id))
+            } else {
+                dispatch(createFavorite({user_id: sessionUserId, product_id: product.id}))
+            }
+        } else {
+            history.push(`/login`)
+        }
     }
 
     const handleOnClick = () => {

@@ -62,7 +62,6 @@
 .user-icon {
     color:#785028;
     font-size: 20px;
-    padding-right: 30px;
 }
 
 .shopping-bag {
@@ -287,4 +286,5 @@
     background-color: white;
     border: none;
     cursor: pointer;
+    margin-left: 30px;
 }

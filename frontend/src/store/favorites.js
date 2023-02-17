@@ -18,6 +18,11 @@ const addFavorite = (favorite) => {
     }
 }
 
+
+export const getFavorite = productId => state => {
+    return state?.favorites ? state.favorites[productId] : null;
+}
+
 const removeFavorite = (favoriteId) => {
     return {
         type: REMOVE_FAVORITE,
@@ -33,12 +38,12 @@ export const fetchFavorites = () => async(dispatch) => {
     dispatch(setFavorites(data))
 }  
 
-// export const fetchFavorite = (productId) => async(dispatch) => {
-//     const response = await csrfFetch(`/api/favorites/${productId}`)
+export const fetchFavorite = (productId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/favorites/${productId}`)
 
-//     const favorite = await response.json()
-//     dispatch(addFavorite(favorite))
-// }  
+    const favorite = await response.json()
+    dispatch(addFavorite(favorite))
+}  
 
 export const deleteFavorite = (favoriteId) => async(dispatch) => {
     const response = await csrfFetch(`/api/favorites/${favoriteId}`, {
@@ -49,6 +54,7 @@ export const deleteFavorite = (favoriteId) => async(dispatch) => {
 }  
 
 export const createFavorite = (favorite) => async(dispatch) => {
+    debugger
     const response = await csrfFetch(`/api/favorites`, {
         method: 'POST',
         body: JSON.stringify(favorite)

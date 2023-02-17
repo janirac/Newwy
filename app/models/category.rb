@@ -31,7 +31,8 @@ class Category < ApplicationRecord
     COSTUMES = 'Costumes'
     HOT_STUFF = 'Hot Stuff'
     EVENT_OCCASSIONS = 'Events and Occassions'
-    TRENDING = 'Trending'
+    TRENDING = 'Trending',
+    BAG = 'Bag'
 
 
     category_map = {
@@ -57,7 +58,8 @@ class Category < ApplicationRecord
         20 => COSTUMES,
         21 => HOT_STUFF,
         22 => EVENT_OCCASSIONS,
-        23 => TRENDING
+        23 => TRENDING,
+        24 => BAG
     }
 
     def get_all_catogories 

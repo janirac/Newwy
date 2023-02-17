@@ -6,6 +6,22 @@ import { exitModalIcon } from "../Navigation"
 const CartItems = ({ setShowCart }) => {
     const cartItems = useSelector(state => Object.values(state.cartItems))
 
+    if (cartItems.length == 0) {
+        return (
+            <div className="cart-container">
+                <div className="cart-container-header">
+                    <div></div>
+                    <h1 className="cart-header-txt">My Bag</h1>
+                    <div className="exit-btn-cart" onClick={() => setShowCart(false)}>{exitModalIcon}</div>
+                </div>
+                <div className="empty-cart">
+                    <img src="https://i.ibb.co/txf3KWv/pngwing-com.png"/>
+                    Please show your cart some love!
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="cart-container">
             <div className="cart-container-header">

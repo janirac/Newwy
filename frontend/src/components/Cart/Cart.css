@@ -93,3 +93,19 @@
     cursor: pointer;
     margin-right: 6px;
 }
+
+.empty-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.empty-cart > img {
+    width: 250px;
+    margin-bottom: 30px;
+}
