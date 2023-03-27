@@ -11,6 +11,7 @@ import { fetchCartItems } from '../../store/cartItems';
 import { fetchProducts } from '../../store/product';
 import { useEffect } from 'react';
 import SearchModal from '../SearchModal';
+import BrowseModal from '../BrowseModal';
 
 export const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
 export const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
@@ -28,6 +29,7 @@ function Navigation() {
   const [showCart, setShowCart] = useState(false)
   const history = useHistory()
   const [showSearchModal, setShowSearchModal] = useState(false)
+  const [showBrowseModal, setShowBrowseModal] = useState(false)
 
   useEffect(() => {
     dispatch(fetchProducts())
@@ -48,6 +50,11 @@ function Navigation() {
   const handleSearchBarClick = (e) => {
     e.preventDefault()
     showSearchModal ? setShowSearchModal(false) : setShowSearchModal(true)
+  }
+
+  const handleBrosweClick = (e) => {
+    e.preventDefault()
+    showBrowseModal ? setShowBrowseModal(false) : setShowBrowseModal(true)
   }
 
   const userLoginDropdown = () => {
@@ -154,10 +161,11 @@ function Navigation() {
     mainLinks = (
       <div className='main-links'>
             <div className='browse-link'>
-              <NavLink className='browse-link-icon' to='/'>
+              <div className='browse-link-icon' onClick={handleBrosweClick}>
                 {browseIcon}
                 Browse
-              </NavLink>
+              </div>
+              {showBrowseModal ? <BrowseModal /> : " "}
             </div>
             <div className='search-link'>
               <div className='search-link-icon' onClick={handleSearchBarClick}>

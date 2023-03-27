@@ -41,6 +41,7 @@ function SearchModal() {
             <div className="search-bar">
                 {searchIcon}
                 <input 
+                    className="input-search"
                     onChange={handleChange}
                     type="text"
                     placeholder="Search Products"
@@ -50,11 +51,13 @@ function SearchModal() {
             </div>
             <div className="popular-buttons">
                 <div> 
-                    <p>POPULAR SEARCHES</p>
+                    <p className="popular-section-text">POPULAR SEARCHES</p>
                 </div>
                 <div className="popular-section">
                     {popularSearches.map((popularSearch) => (
-                        <button onClick={() => {
+                        <button 
+                        className="popular-search-buttons"
+                        onClick={() => {
                             setSearchWord(popularSearch);
                             history.push(`/search?query=${searchWord}`)
                         }}>

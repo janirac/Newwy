@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import ProductCard from "../ProductIndexPage/ProductCard"
+import "./SearchResults.css"
 
 function SearchResults() {
     const location = useLocation()
@@ -8,19 +9,24 @@ function SearchResults() {
     const query = queryParams.get("query")
     const products = useSelector(state => Object.values(state.products))
 
-    console.log("Im here")
-    console.log(products)
-
+    
     const filteredProducts = products.filter(product => 
         product.name.toLowerCase().includes(query.toLowerCase())
-    );
-    
-    return (
-        <div>
+        );
+        
+    if(filteredProducts.length === 0) {
+        return (
+            <div className="container-search-results">
+            
+            </div>
+        )
+    }
+        return (
             <div>
+            <div className="search-results-number">
                 <p>SEARCH RESULTS</p>
                 <h1>{query}</h1>
-                <p>Results</p>
+                <p>{filteredProducts.length} Results</p>
             </div>
             <div>
                 {filteredProducts.map(filteredProduct => (

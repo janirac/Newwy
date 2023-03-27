@@ -1,0 +1,67 @@
+.browse-modal-container {
+    position: fixed;
+    width: 400px;
+    background-color: #f0f0f0;
+    height: 100%;
+    z-index: 9999999;
+    left: 0;
+    top: 0;
+    border: 1px solid black;
+    overflow: hidden;
+}    
+
+.browse-modal-container.hide {
+    display: none;
+}
+
+.browse-header-text {
+    color: black;
+    font-size: 17px;
+}
+
+.browse-photo {
+    width: 95%;
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../images/dylann-hendricks-v_mk4MA53fo-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 25px 10px 0 10px;
+    border: 1px #e2dada solid;
+}
+
+.button-section-browse {
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    margin-top: 10px;
+}
+
+.browse-category-btn {
+    height: 55px;
+    font-size: 17px;
+    border: 1px #e2dada solid;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.main-browse {
+    background-color: white;
+}
+
+.browse-container-header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    align-items: center;
+    border-bottom: 1px #e2dada solid;
+}
+
+.exit-btn-browse {
+    color: #785028;
+    cursor: pointer;
+    margin-right: 6px;
+    background: white;
+    border: none;
+}
