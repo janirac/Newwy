@@ -100,7 +100,6 @@ function ProductSlider() {
                 </NavLink>
             </div>
             <div className='carousel-main'>
-        
                 <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
                     {hotStuffProducts}
                 </Carousel>;

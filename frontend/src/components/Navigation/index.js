@@ -47,12 +47,7 @@ function Navigation() {
   
   const handleSearchBarClick = (e) => {
     e.preventDefault()
-
-    if(showSearchModal) {
-      setShowSearchModal(false)
-    } else {
-      setShowSearchModal(true)
-    }
+    showSearchModal ? setShowSearchModal(false) : setShowSearchModal(true)
   }
 
   const userLoginDropdown = () => {

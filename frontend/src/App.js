@@ -13,6 +13,7 @@ import Favorites from "./components/Favorites";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loading from "./components/Loading/loading";
+import SearchResults from "./components/SearchResults";
 
 
 function App() {
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route path="/eventsoccasions">
               <ProductIndexPage />
+            </Route>
+            <Route path="/search">
+              <SearchResults />
             </Route>
           </Switch>
           {locationLoginOrSignUp && <Footer />}
