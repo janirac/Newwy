@@ -12,11 +12,21 @@ function SearchResults({category}) {
     const query = queryParams.get("query")
     const products = useSelector(state => Object.values(state.products))
 
-    const filteredProducts = products.filter(product => {  
-        if (product.categories[0].some(categoryNum => categoryMap[categoryNum])){
-            return true
+    if(query){
+        category = query
+    }
+    
+    const filteredProducts = products.filter(product => {
+        let match = false  
+        if (category && product.categories[0].some(categoryNum => {
+            return categoryMap[categoryNum].toLowerCase() === category.toLowerCase()
+        })){
+            match = true
         }
-        return product.name.toLowerCase().includes(query.toLowerCase())
+        if (product.name.toLowerCase().includes(query.toLowerCase())){
+            match = true
+        }
+        return match
     });
         
     console.log(filteredProducts)
@@ -35,11 +45,13 @@ function SearchResults({category}) {
                 <h1>{category ? category : query}</h1>
                 <p>{filteredProducts.length} Results</p>
             </div>
-            <div>
+            <div className="product-index-main">
+            <div className="product-index-container">
                 {filteredProducts.map(filteredProduct => (
                     <ProductCard key={filteredProduct.id} product={filteredProduct}/>
                 ))}
             </div>
+        </div>
         </div>
     )
 }
