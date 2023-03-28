@@ -6,7 +6,8 @@ import SearchResults from "../SearchResults"
 import "./SearchModal.css"
 
 function SearchModal() {
-    const [searchWord, setSearchWord] = useState(" ")
+    debugger
+    const [searchWord, setSearchWord] = useState("")
     const [showModal, setShowModal] = useState(true)
 
     const history = useHistory()
@@ -58,8 +59,8 @@ function SearchModal() {
                         <button 
                         className="popular-search-buttons"
                         onClick={() => {
-                            setSearchWord(popularSearch);
-                            history.push(`/search?query=${searchWord}`)
+                            // setSearchWord(popularSearch);
+                            history.push(`/search?query=${popularSearch}`)
                         }}>
                             {popularSearch}
                         </button>
