@@ -9,11 +9,13 @@ function SearchResults({category}) {
 
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
-    const query = queryParams.get("query")
+    let query = queryParams.get("query")
     const products = useSelector(state => Object.values(state.products))
 
     if(query){
         category = query
+    } else {
+        query = category
     }
     
     const filteredProducts = products.filter(product => {
@@ -41,10 +43,10 @@ function SearchResults({category}) {
         return (
             <div>
             <div className="search-results-number">
-                <p>SEARCH RESULTS</p>
-                <h1>{category ? category : query}</h1>
-                <p>{filteredProducts.length} Results</p>
+                <p className="category">CATEGORY</p>
+                <h1 className="category-name-text">{category ? category : query}</h1>
             </div>
+                <p className="results-text">{filteredProducts.length} Results</p>
             <div className="product-index-main">
             <div className="product-index-container">
                 {filteredProducts.map(filteredProduct => (

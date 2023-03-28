@@ -5,16 +5,18 @@ import ProductCard from '../ProductIndexPage/ProductCard';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { fetchProducts } from '../../store/product';
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { fetchFavorites } from '../../store/favorites';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+import CategoryIndex from '../Category/CategoryPages';
 
 function ProductSlider() { 
-
     const dispatch = useDispatch()
     const products = useSelector(state => Object.values(state.products))
     const sessionUser = useSelector(state => state.session.user);
     const favorites = useSelector(state => Object.values(state.favorites));
+    const [category, setCategory] = useState("")
+    const history = useHistory()
 
     useEffect(() => {
         dispatch(fetchProducts())
@@ -42,6 +44,11 @@ function ProductSlider() {
         }
     };
     
+    const handleClick = (e) => {
+        debugger
+        // setCategory(e.target.value)
+        history.push(`/${e.target.value}`)
+    }
     
     const productCards = products.map(product => (
         <NavLink className='product-card-link' to={`/products/${product.id}`}>
@@ -93,11 +100,11 @@ function ProductSlider() {
                         <h3 className='category-sub-text'>Spring break incoming!</h3>
                     </div>
                 </div>
-                <NavLink className='view-all-link' to='/hotstuff'>
-                    <div className='view-all-link'>
-                        <h3>view all</h3>
-                    </div>
-                </NavLink>
+                <div className='view-all-link'>
+                    <button value="hotstuff" onClick={handleClick} className='view-all-link'>
+                        view all
+                    </button>
+                </div>
             </div>
             <div className='carousel-main'>
                 <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
@@ -150,6 +157,7 @@ function ProductSlider() {
                     {trendingProducts}
                 </Carousel>;
             </div>
+            {/* {category ? <CategoryIndex category={category}/> : ""} */}
         </div>
     )
 

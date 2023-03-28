@@ -14,7 +14,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Loading from "./components/Loading/loading";
 import SearchResults from "./components/SearchResults";
-
+import CategoryIndex from "./components/Category/CategoryPages";
 
 function App() {
   
@@ -54,13 +54,15 @@ function App() {
               <ProductShowPage />
             </Route>
             <Route path="/hotstuff">
-              <ProductIndexPage />
+              <CategoryIndex category={"hotstuff"} />
             </Route>
             <Route path="/trending">
-              <ProductIndexPage />
+              <CategoryIndex category={"trending"} />
+              {/* <ProductIndexPage /> */}
             </Route>
             <Route path="/eventsoccasions">
-              <ProductIndexPage />
+              <CategoryIndex category={"eventsoccasions"} />
+              {/* <ProductIndexPage /> */}
             </Route>
             <Route path="/search">
               <SearchResults />
