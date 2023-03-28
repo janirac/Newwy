@@ -12,15 +12,14 @@ function SearchResults({category}) {
     const query = queryParams.get("query")
     const products = useSelector(state => Object.values(state.products))
 
-    
     const filteredProducts = products.filter(product => {  
-        // if (product.categories[0].some(categoryNum => categoryMap[categoryNum])){
-        //     return true
-        // }
-        
-        product.name.toLowerCase().includes(query.toLowerCase())
+        if (product.categories[0].some(categoryNum => categoryMap[categoryNum])){
+            return true
+        }
+        return product.name.toLowerCase().includes(query.toLowerCase())
     });
         
+    console.log(filteredProducts)
     if(filteredProducts.length === 0) {
         return (
             <div className="container-search-results">
