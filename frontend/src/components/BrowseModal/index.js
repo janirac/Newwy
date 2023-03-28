@@ -1,8 +1,8 @@
 import "./BrowseModal.css"
 import { exitModalIcon } from "../Navigation"
 import { useState } from "react"
-import CategoryIndex from "../Category/CategoryPages"
 import { useHistory } from "react-router-dom"
+import SearchResults from "../SearchResults"
 
 function BrowseModal() {
     const [showModal, setShowModal] = useState(true)
@@ -44,7 +44,7 @@ function BrowseModal() {
                         Kids + Baby
                     </button>
                 </div>
-            {category ? <CategoryIndex category={category}/> : " "}
+            {category ? <SearchResults category={category}/> : " "}
             </div>
         </div>
     )

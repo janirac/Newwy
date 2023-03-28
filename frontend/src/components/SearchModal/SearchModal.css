@@ -3,26 +3,41 @@
     top: 0;
     width: 100%;
     left: 0;
-    height: 205px;
+    height: 250px;
     background-color: #f7f7f7;
     z-index: 2000;
     transition: all 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
 }
 
 .search-modal-container.hide {
     display: none;
 }
 
+
+.main-search-modal {
+    width: 100%;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 67px;
+}
+
 .search-bar {
     margin-top: 40px;
     color: #785028;
     display: flex;
+    width: 36%;
+}
+
+.modal-close {
+    position: fixed;
+    right: 10px;
+    top: 13px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #785028;
 }
 
 .input-search {
@@ -60,5 +75,7 @@
 }
 
 .popular-section-text {
+    margin-top: 25px;
     color: #785028;
+    margin-bottom: 10px;
 }

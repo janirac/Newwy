@@ -8,7 +8,6 @@ import { fetchProducts } from '../../store/product';
 import { useEffect, useState } from "react"
 import { fetchFavorites } from '../../store/favorites';
 import { NavLink, useHistory } from 'react-router-dom';
-import CategoryIndex from '../Category/CategoryPages';
 
 function ProductSlider() { 
     const dispatch = useDispatch()
@@ -45,8 +44,6 @@ function ProductSlider() {
     };
     
     const handleClick = (e) => {
-        debugger
-        // setCategory(e.target.value)
         history.push(`/${e.target.value}`)
     }
     
@@ -100,11 +97,11 @@ function ProductSlider() {
                         <h3 className='category-sub-text'>Spring break incoming!</h3>
                     </div>
                 </div>
-                <div className='view-all-link'>
-                    <button value="hotstuff" onClick={handleClick} className='view-all-link'>
+                <NavLink className='view-all-link' to="/hotstuff">
+                    <div value="hotstuff" onClick={handleClick} className='view-all-link'>
                         view all
-                    </button>
-                </div>
+                    </div>
+                </NavLink>
             </div>
             <div className='carousel-main'>
                 <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
@@ -157,7 +154,6 @@ function ProductSlider() {
                     {trendingProducts}
                 </Carousel>;
             </div>
-            {/* {category ? <CategoryIndex category={category}/> : ""} */}
         </div>
     )
 

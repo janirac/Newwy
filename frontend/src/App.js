@@ -7,14 +7,12 @@ import Footer from "./components/Footer";
 import { useLocation } from "react-router-dom";
 import Hero from "./components/Hero";
 import ProductShowPage from "./components/ProductShowPage";
-import ProductIndexPage from "./components/ProductIndexPage"
 import ProductSlider from "./components/ProductSlider";
 import Favorites from "./components/Favorites";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loading from "./components/Loading/loading";
 import SearchResults from "./components/SearchResults";
-import CategoryIndex from "./components/Category/CategoryPages";
 
 function App() {
   
@@ -54,15 +52,13 @@ function App() {
               <ProductShowPage />
             </Route>
             <Route path="/hotstuff">
-              <CategoryIndex category={"hotstuff"} />
+              <SearchResults category={"hotstuff"} />
             </Route>
             <Route path="/trending">
-              <CategoryIndex category={"trending"} />
-              {/* <ProductIndexPage /> */}
+              <SearchResults category={"trending"} />
             </Route>
             <Route path="/eventsoccasions">
-              <CategoryIndex category={"eventsoccasions"} />
-              {/* <ProductIndexPage /> */}
+              <SearchResults category={"eventsoccasions"} />
             </Route>
             <Route path="/search">
               <SearchResults />

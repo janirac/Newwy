@@ -5,7 +5,6 @@ import "./SearchResults.css"
 import { categoryMap } from "../../utils/categoryConstants"
 
 function SearchResults({category}) {
-    debugger
 
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
@@ -21,17 +20,16 @@ function SearchResults({category}) {
     const filteredProducts = products.filter(product => {
         let match = false  
         if (category && product.categories[0].some(categoryNum => {
-            return categoryMap[categoryNum].toLowerCase() === category.toLowerCase()
+            return categoryMap[categoryNum].toLowerCase().replace(/\s+/g, '') === category.toLowerCase().replace(/\s+/g, '')
         })){
             match = true
         }
-        if (product.name.toLowerCase().includes(query.toLowerCase())){
+        if (product.name.toLowerCase().replace(/\s+/g, '').includes(query.toLowerCase().replace(/\s+/g, ''))){
             match = true
         }
         return match
     });
         
-    console.log(filteredProducts)
     if(filteredProducts.length === 0) {
         return (
             <div className="container-search-results">
@@ -44,7 +42,7 @@ function SearchResults({category}) {
             <div>
             <div className="search-results-number">
                 <p className="category">CATEGORY</p>
-                <h1 className="category-name-text">{category ? category : query}</h1>
+                <h1 className="category-name-text">{category ? category.toLowerCase() : query.toLowerCase()}</h1>
             </div>
                 <p className="results-text">{filteredProducts.length} Results</p>
             <div className="product-index-main">
