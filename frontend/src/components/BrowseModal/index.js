@@ -15,7 +15,7 @@ function BrowseModal() {
 
     const handleOnClick = (e) => {
         setCategory(e.target.value)
-        // history.push(`/search?query=${e.target.value}`)
+        history.push(`/search?query=${e.target.value}`)
         setShowModal(false)
     }
 
