@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # db/seeds.rb
-
+require "open-uri"
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
@@ -519,17 +519,17 @@ ApplicationRecord.transaction do
 
    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/f4ZFrJw/guess2.jpg"
+        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess2.jpeg")
     )
 
    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/3FKXx41/guess1.jpg"
+        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess1.jpeg")
     )
 
-   ProductImage.create!(
+    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/SrpJ7Df/guess3.jpg"
+        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess3.jpeg")
     )
 
    ProductImage.create!(

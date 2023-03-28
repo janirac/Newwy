@@ -10,10 +10,12 @@ import CartItems from '../Cart/CartIndex';
 import { fetchCartItems } from '../../store/cartItems';
 import { fetchProducts } from '../../store/product';
 import { useEffect } from 'react';
+import SearchModal from '../SearchModal';
+import BrowseModal from '../BrowseModal';
 
 export const checklistIcon = <FontAwesomeIcon className='checklist-icon' icon={faClipboardList} />
 export const settingsIcon = <FontAwesomeIcon className='settings-icon' icon={faGear} />
-const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
+export const searchIcon = <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
 const browseIcon = <FontAwesomeIcon className='browse-icon' icon={faBars} />
 const cartIcon = <FontAwesomeIcon className='shopping-bag' icon={faBagShopping} />
 const userIcon = <FontAwesomeIcon className='user-icon' icon={faUser} />
@@ -26,6 +28,8 @@ function Navigation() {
   const location = useLocation()
   const [showCart, setShowCart] = useState(false)
   const history = useHistory()
+  const [showSearchModal, setShowSearchModal] = useState(false)
+  const [showBrowseModal, setShowBrowseModal] = useState(false)
 
   useEffect(() => {
     dispatch(fetchProducts())
@@ -43,6 +47,16 @@ function Navigation() {
     }
   }
   
+  const handleSearchBarClick = (e) => {
+    e.preventDefault()
+    showSearchModal ? setShowSearchModal(false) : setShowSearchModal(true)
+  }
+
+  const handleBrosweClick = (e) => {
+    e.preventDefault()
+    showBrowseModal ? setShowBrowseModal(false) : setShowBrowseModal(true)
+  }
+
   const userLoginDropdown = () => {
 
     if (showUserDropdown){
@@ -147,16 +161,18 @@ function Navigation() {
     mainLinks = (
       <div className='main-links'>
             <div className='browse-link'>
-              <NavLink className='browse-link-icon' to='/'>
+              <div className='browse-link-icon' onClick={handleBrosweClick}>
                 {browseIcon}
                 Browse
-              </NavLink>
+              </div>
+              {showBrowseModal ? <BrowseModal /> : " "}
             </div>
             <div className='search-link'>
-              <NavLink className='search-link-icon' to='/'>
+              <div className='search-link-icon' onClick={handleSearchBarClick}>
                 {searchIcon}
                 Search
-              </NavLink>
+              </div>
+                {showSearchModal ? <SearchModal /> : " "}
             </div>
         </div>
     )
