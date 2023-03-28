@@ -34,7 +34,7 @@ function Navigation() {
   useEffect(() => {
     dispatch(fetchProducts())
     dispatch(fetchCartItems())
-  }, [])
+  }, [dispatch])
 
   const handleShoppingCart = (e) => {
     e.preventDefault()
@@ -66,7 +66,7 @@ function Navigation() {
             onMouseLeave={() => setshowUserDropdown(false)}
             onClick={() => setshowUserDropdown(false)}
             >
-              <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
+              <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png" alt='profile-img'/> 
               <p className='signin-text-dropdown'>Sign In</p>
               <div className='middle-dropdown'>
                 <p className='middle-dropdown-text'>Buy what you love, sell what someone else will love. Repeat</p>
@@ -104,7 +104,7 @@ function Navigation() {
               <div className='profile-btn-main'>
                 <NavLink className='profile-btn-main-link' to='/profile'>
                   <button className='profile-btn'>
-                    <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
+                    <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png" alt='profile-img'/> 
                     <div className='profile-btn-view'>
                       <h4 className='profile-name'>{sessionUser.email}</h4>
                       <div className='view-name'>View</div>

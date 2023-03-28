@@ -15,6 +15,10 @@ function ProductIndexPage() {
 
     return (
         <div className="product-index-main">
+            <div className="category-header">
+                {/* <h3>FEATURED CATEGORY</h3> */}
+                {/* <h1>{category}</h1> */}
+            </div>
             <div className="product-index-container">
                 {products.map(product => (
                     <ProductCard product={product}/>

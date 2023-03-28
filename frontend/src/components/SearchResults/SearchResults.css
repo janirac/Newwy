@@ -1,12 +1,29 @@
 .search-results-number {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100px;
+    background-color: #785028;
+    color: #fef3f3;
+    justify-content: center;
+}
+
+.results-text {
+    justify-content: center;
+    display: flex;
+    margin-top: 45px;
+    font-size: 20px;
+    color: #6c6666;
 }
 
 .container-search-results {
     width: 100%;
     height: 35vh;
+}
+
+.category-name-text {
+    font-size: 30px;
+    margin-top: 7px;
+    font-weight: 900;
+    font-family: sans-serif;
 }
