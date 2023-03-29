@@ -19,6 +19,8 @@ function ProductCard( { product } ) {
         if(currFavorite.productId === product.id) {
             return currFavorite
         }
+
+        return false
     })
 
     const mainImage = product.images[0] 
@@ -48,6 +50,7 @@ function ProductCard( { product } ) {
     }, [product.id, favorites])
 
     const handleFavoritesButton = (e) => {
+        debugger
         e.preventDefault()
         if(sessionUser){
             const sessionUserId = sessionUser.id

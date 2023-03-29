@@ -1,5 +1,5 @@
 # return a favorite
-json.extract! @favorite, :user_id, :product_id
+json.extract! @favorite, :id, :user_id, :product_id
 
 # json.id @favorite.id
 # json.user_id @favorite.user_id
