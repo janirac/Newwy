@@ -43,9 +43,9 @@ function Footer() {
                     <h4 className='footer-headers'>
                         Stay Connected
                         <div className='footer-personal-links'>
-                            <i class="fa-brands fa-square-github"></i>
-                            <i class="fa-brands fa-linkedin"></i>
-                            <i class="fa-solid fa-envelope"></i>
+                            <a href="https://github.com/janirac"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/janira-crispin-396656a9/"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:janiracrispin@gmail.com"><i class="fas fa-envelope"></i></a>
                         </div>
                     </h4>
                 </div> 
