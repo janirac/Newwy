@@ -38,6 +38,7 @@
     border: none;
     font-size: 20px;
     color: #785028;
+    cursor: pointer;
 }
 
 .input-search {
@@ -78,4 +79,8 @@
     margin-top: 25px;
     color: #785028;
     margin-bottom: 10px;
+}
+
+.search-error {
+    color: #785028;
 }

@@ -517,19 +517,19 @@ ApplicationRecord.transaction do
     )
 
 
-   ProductImage.create!(
-        product_id: 9,
-        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess2.jpeg")
-    )
-
-   ProductImage.create!(
-        product_id: 9,
-        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess1.jpeg")
-    )
-
     ProductImage.create!(
         product_id: 9,
-        image_url: URI.open("https://newwy-seeds.s3.us-east-2.amazonaws.com/guess3.jpeg")
+        image_url: "https://i.ibb.co/3FKXx41/guess1.jpg"
+    )
+
+   ProductImage.create!(
+        product_id: 9,
+        image_url: "https://i.ibb.co/SrpJ7Df/guess3.jpg"
+    )
+
+   ProductImage.create!(
+        product_id: 9,
+        image_url: "https://i.ibb.co/GxrnVtB/guess4.jpg"
     )
 
    ProductImage.create!(
