@@ -10,6 +10,7 @@ const CartItems = ({ setShowCart }) => {
 
     const handleOnClick = (e) => {
         e.preventDefault()
+        setShowCart(false)
         history.push(`/checkout`)
     }
 

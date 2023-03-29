@@ -46,6 +46,10 @@ function Navigation() {
       dispatch(fetchCartItems())
     }
   }
+
+  const handleDropdownClicks = () => {
+    setshowUserDropdown(false)
+  }
   
   const handleSearchBarClick = (e) => {
     e.preventDefault()
@@ -74,12 +78,12 @@ function Navigation() {
               <ul className='user-dropdown-btns'>
                   <li>
                       <NavLink to="/login">
-                        <button className='login-btn'>Log In</button>
+                        <button onClick={handleDropdownClicks} className='login-btn'>Log In</button>
                       </NavLink>
                     </li>
                   <li>
                     <NavLink to="/signup">
-                      <button className='signup-btn'>Join Now</button>
+                      <button onClick={handleDropdownClicks} className='signup-btn'>Join Now</button>
                     </NavLink>
                   </li>
               </ul>
@@ -91,6 +95,7 @@ function Navigation() {
 
   const logout = (e) => {
     e.preventDefault();
+    setshowUserDropdown(false)
     dispatch(sessionActions.logout());
   };
 
@@ -103,7 +108,7 @@ function Navigation() {
             >
               <div className='profile-btn-main'>
                 <NavLink className='profile-btn-main-link' to='/profile'>
-                  <button className='profile-btn'>
+                  <button onClick={handleDropdownClicks} className='profile-btn'>
                     <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png" alt='profile-img'/> 
                     <div className='profile-btn-view'>
                       <h4 className='profile-name'>{sessionUser.email}</h4>
@@ -114,7 +119,7 @@ function Navigation() {
               </div>
               <div className='orders-btn-main'>
                 <NavLink className='orders-btn-main-link' to="/">
-                  <button className='orders-btn'>
+                  <button onClick={handleDropdownClicks} className='orders-btn'>
                     {checklistIcon}
                     <text className='orders-text'>Orders</text>
                   </button>
@@ -122,14 +127,14 @@ function Navigation() {
               </div>
               <div className='settings-btn-main'>
                 <NavLink to='/'>
-                  <button className='settings-btn'>
+                  <button onClick={handleDropdownClicks} className='settings-btn'>
                     {settingsIcon}
                     <text className='settings-text'>Settings</text>
                   </button>
                 </NavLink>
               </div>
               <div className='logout-button-main'>
-                <NavLink to='/logout'>
+                <NavLink to='/'>
                   <button className='logout-button' onClick={logout}>
                     <text className='signout-text'>Sign Out</text>
                   </button>

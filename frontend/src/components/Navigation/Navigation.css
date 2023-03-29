@@ -72,10 +72,10 @@
 
 .user-dropdown {
     position: absolute;
-    top: 20px;
+    top: 23px;
     width: 360px;
     height: 268px;
-    right: 0px;
+    right: 50px;
     background-color: #ffff;
     border-radius: 5px;
     display: flex;
