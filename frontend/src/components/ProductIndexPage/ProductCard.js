@@ -19,9 +19,14 @@ function ProductCard( { product } ) {
         if(currFavorite.productId === product.id) {
             return currFavorite
         }
+
+        return false
     })
 
-    const mainImage = product.images[0] ? product.images[0].imageUrl : "www.google.com/img.png"
+    const mainImage = product.images[0] 
+        ? product.images[0].imageUrl 
+        : "www.google.com/img.png";
+
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
@@ -34,7 +39,6 @@ function ProductCard( { product } ) {
 
     const [isFavorited, setIsFavorited] = useState(!!favorite)
    
-
     useEffect(() => {
         const updatedFavorite = favorites.find((currFavorite) => {
             if(currFavorite.productId === product.id) {
@@ -43,9 +47,10 @@ function ProductCard( { product } ) {
         })
         setIsFavorited(!!updatedFavorite);
 
-    }, [favorites])
+    }, [product.id, favorites])
 
     const handleFavoritesButton = (e) => {
+        debugger
         e.preventDefault()
         if(sessionUser){
             const sessionUserId = sessionUser.id
@@ -69,7 +74,6 @@ function ProductCard( { product } ) {
             <button className="img-dropdown-btn" onClick={handleFavoritesButton}>
                 <div className={`heart-icon-index ${isFavorited ? "active" : ""}`}>{heartIcon()}</div>
             </button>
-                {/* <NavLink className='product-card-link' to={`/products/${product.id}`}> */}
                     <div className="product-card-main">
                         <div className="product-card-container">
                             <div className="img-main">
@@ -94,7 +98,6 @@ function ProductCard( { product } ) {
                             </div>
                         </div>
                     </div>
-                {/* </NavLink> */}
         </div>
     )
 }

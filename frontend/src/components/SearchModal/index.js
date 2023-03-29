@@ -18,6 +18,7 @@ function SearchModal() {
 
     const handleSubmit = (e) => {
         if (e.key === 'Enter') {
+            setShowModal(false)
             history.push(`/search?query=${searchWord}`)
         }
     }
