@@ -1,10 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./footer.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Footer() {
-    // const gitHub = <FontAwesomeIcon icon={faGit} />
 
     return (
         <div className='footer-main'>
@@ -45,9 +43,9 @@ function Footer() {
                     <h4 className='footer-headers'>
                         Stay Connected
                         <div className='footer-personal-links'>
-                        <i class="fa-brands fa-square-github"></i>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-solid fa-envelope"></i>
+                            <i class="fa-brands fa-square-github"></i>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
                     </h4>
                 </div> 

@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Loading from "./components/Loading/loading";
 import SearchResults from "./components/SearchResults";
+import Checkout from "./components/Cart/Checkout";
 
 function App() {
   
@@ -25,7 +26,7 @@ function App() {
       }, []);
 
   const location = useLocation()
-  const locationLoginOrSignUp = location.pathname !== "/login" && location.pathname !== "/signup"
+  const locationLoginOrSignUp = location.pathname !== "/login" && location.pathname !== "/signup" && location.pathname !== "/checkout"
 
   return (
     <div>
@@ -62,6 +63,9 @@ function App() {
             </Route>
             <Route path="/search">
               <SearchResults />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
           {locationLoginOrSignUp && <Footer />}

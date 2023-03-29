@@ -20,21 +20,7 @@ function ProductSlider() {
     useEffect(() => {
         dispatch(fetchProducts())
         dispatch(fetchFavorites())
-        // if (favorites.length == 0) {
-            // dispatch(fetchFavorites())
-        // }
     }, [])
-
-    // // useEffect(() => {
-    //     // dispatch(fetchProducts())
-    //     // if (favorites.length == 0) {
-    //         // dispatch(fetchFavorites())
-    //     // }
-    // }, [favorites])
-    // if (favorites.length == 0) {
-    //     dispatch(fetchFavorites())
-    // }
-    // dispatch(fetchFavorites())
 
     const responsive = {
         desktop: {
@@ -104,7 +90,7 @@ function ProductSlider() {
                 </NavLink>
             </div>
             <div className='carousel-main'>
-                <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2}>
+                <Carousel className='multiple-product-carousel' responsive={responsive} slidesToSlide={2} infinite={true}>
                     {hotStuffProducts}
                 </Carousel>;
             </div>

@@ -78,7 +78,7 @@ function ProductCard( { product } ) {
                         <div className="product-card-container">
                             <div className="img-main">
                                 {hasManyImages && !locationIndex ? 
-                                    <Carousel slidesToSlide={1} responsive={responsive} className='single-product-carousel'>
+                                    <Carousel slidesToSlide={1} responsive={responsive} infinite={true} className='single-product-carousel'>
                                         {
                                             product.images.map(image => (
                                                 <img onClick={handleOnClick} className='img-dropdown-indexpage' src={image.imageUrl}/>
