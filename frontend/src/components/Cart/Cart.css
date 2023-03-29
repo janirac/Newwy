@@ -109,3 +109,115 @@
     width: 250px;
     margin-bottom: 30px;
 }
+
+.checkout-card-info {
+    height: 379px;
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 80px;
+}
+
+.checkout-input-fields {
+    display: flex;
+    flex-direction: column;
+    height: 228px;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.input-text-checkout{
+    border: none;
+    border-bottom: 1px solid black;
+    color: #2c2c2c;
+    height: 30px;
+    width: 100%; 
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.ship-to{
+    width: 90%;
+    font-size: 12px;
+}
+
+.shopping-cart-items {
+    width: 30%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 490px;
+}
+
+.checkout-middle-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.checkout-calculations {
+    background-color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkout-totals {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.total-text {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.num-text {
+    color: grey;
+    margin-right: 15px;
+}
+
+.confirm-btn {
+    border: none;
+    background-color: #785028;
+    color: white;
+    width: 85%;
+    font-size: 20px;
+    height: 38px;
+    margin-left: 35px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.cart-item-checkout {
+    margin-left: 15px;
+}
+
+.checkout-headers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45px;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    margin-top: 30px;
+}
+
+.checkout-headers p:first-child {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.checkout-headers p:second-child {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+

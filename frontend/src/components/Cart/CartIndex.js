@@ -1,10 +1,17 @@
-import CartItem from "./CartItem"
+import CartItemCard from "./CartItem"
 import { useSelector } from "react-redux"
 import "./Cart.css"
 import { exitModalIcon } from "../Navigation"
+import { useHistory } from "react-router-dom"
 
 const CartItems = ({ setShowCart }) => {
     const cartItems = useSelector(state => Object.values(state.cartItems))
+    const history = useHistory()
+
+    const handleOnClick = (e) => {
+        e.preventDefault()
+        history.push(`/checkout`)
+    }
 
     if (cartItems.length === 0) {
         return (
@@ -31,14 +38,14 @@ const CartItems = ({ setShowCart }) => {
             </div>
             <ul className="cart-item-list">
                 {
-                    cartItems.map(cartItem => <CartItem cartItem={cartItem}/>)
+                    cartItems.map(cartItem => <CartItemCard cartItem={cartItem}/>)
                 }
             </ul>
             <div className="bottom-cart">
                 <div>
                     <h2 className="bottom-cart-txt">Subtotal</h2>
                 </div>
-                <button className="checkout-btn">Checkout</button>
+                <button onClick={handleOnClick} className="checkout-btn">Checkout</button>
             </div>
         </div>
     )

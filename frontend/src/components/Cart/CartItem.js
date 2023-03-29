@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { getProduct } from "../../store/product"
-import { deleteCartItem } from "../../store/cartItems"
+import { deleteCartItem, fetchCartItems } from "../../store/cartItems"
+import { useEffect } from "react"
 
 const CartItemCard = ( { cartItem } ) => {
     const dispatch = useDispatch()
@@ -11,6 +12,10 @@ const CartItemCard = ( { cartItem } ) => {
         e.preventDefault()
         dispatch(deleteCartItem(cartItem.id))
     }
+
+    useEffect(() => {
+        dispatch(fetchCartItems());
+    }, [dispatch]);
 
     if(!product) {
         return null
