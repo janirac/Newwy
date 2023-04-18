@@ -18,7 +18,6 @@ function SearchResults({category}) {
     }
     
     const filteredProducts = products.filter(product => {
-        debugger
         let match = false  
         if (category && product.categories[0].some(categoryNum => {
             return categoryMap[categoryNum].toLowerCase().replace(/\s+/g, '') === category.toLowerCase().replace(/\s+/g, '')

@@ -66,8 +66,6 @@ export const createFavorite = (favorite) => async(dispatch) => {
         method: 'POST',
         body: JSON.stringify(favorite)
     })
-
-    debugger
     const data = await response.json()
     dispatch(addFavorite(data))
 }

@@ -50,7 +50,6 @@ function ProductCard( { product } ) {
     }, [product.id, favorites])
 
     const handleFavoritesButton = (e) => {
-        debugger
         e.preventDefault()
         if(sessionUser){
             const sessionUserId = sessionUser.id
