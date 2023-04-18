@@ -59,7 +59,7 @@ function App() {
               <SearchResults category={"trending"} />
             </Route>
             <Route path="/eventsoccasions">
-              <SearchResults category={"eventsoccasions"} />
+              <SearchResults category={"events and occasions"} />
             </Route>
             <Route path="/search">
               <SearchResults />

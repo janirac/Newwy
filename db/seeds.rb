@@ -829,21 +829,21 @@ ApplicationRecord.transaction do
 
     Category.create!(
         product_id: 10,
-        category_ids: [6, 21, 16]
+        category_ids: [2, 6, 21, 16]
     )
     Category.create!(
         product_id: 9,
-        category_ids: [8, 17, 6, 2, 13, 21]
+        category_ids: [2, 8, 17, 6, 2, 13, 21]
     )
 
     Category.create!(
         product_id: 8,
-        category_ids: [6, 14, 18, 21]
+        category_ids: [2, 6, 14, 18, 21]
     )
 
     Category.create!(
         product_id: 7,
-        category_ids: [17, 13, 2, 6, 21]
+        category_ids: [2, 17, 13, 2, 6, 21]
     )
 
     Category.create!(
@@ -853,55 +853,55 @@ ApplicationRecord.transaction do
 
     Category.create!(
         product_id: 5,
-        category_ids: [13, 14, 2, 6, 21]
+        category_ids: [2, 13, 14, 2, 6, 21]
     )
 
     Category.create!(
         product_id: 4,
-        category_ids: [12, 6, 21]
+        category_ids: [2, 12, 6, 21]
     )
 
     Category.create!(
         product_id: 3,
-        category_ids: [10, 6, 11, 21]
+        category_ids: [2, 10, 6, 11, 21]
     )
 
     Category.create!(
         product_id: 2,
-        category_ids: [10, 2, 21]
+        category_ids: [2, 10, 2, 21]
     )
 
     Category.create!(
         product_id: 1,
-        category_ids: [6, 9, 8, 2, 21]
+        category_ids: [2, 6, 9, 8, 2, 21]
     )
     Category.create!(
         product_id: 11,
-        category_ids: [21, 23, 24]
+        category_ids: [2, 21, 23, 24]
     )
     Category.create!(
         product_id: 12,
-        category_ids: [1, 8, 22]
+        category_ids: [2, 1, 8, 22]
     )
     Category.create!(
         product_id: 13,
-        category_ids: [1, 8, 22, 21]
+        category_ids: [2, 1, 8, 22, 21]
     )
     Category.create!(
         product_id: 14,
-        category_ids: [1, 6, 23]
+        category_ids: [2, 1, 6, 23]
     )
     Category.create!(
         product_id: 15,
-        category_ids: [6, 10, 23]
+        category_ids: [2, 6, 10, 23]
     )
     Category.create!(
         product_id: 16,
-        category_ids: [14, 5, 10, 23, 21]
+        category_ids: [2, 14, 5, 10, 23, 21]
     )
     Category.create!(
         product_id: 17,
-        category_ids: [14, 22]
+        category_ids: [2, 14, 22]
     )
     Category.create!(
         product_id: 18,

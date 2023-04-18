@@ -10,7 +10,7 @@
 #
 class Category < ApplicationRecord
     SHOES = 'Shoes'
-    CLOTHING = 'Clothing'
+    All_CLOTHING = 'All Clothing'
     ACCESSORIES = 'Accessories'
     KIDS_BABY = 'Kids + Baby'
     ALL_GENDERS = 'All Genders'
@@ -30,14 +30,14 @@ class Category < ApplicationRecord
     SWIMWEAR = 'Swimwear'
     COSTUMES = 'Costumes'
     HOT_STUFF = 'Hot Stuff'
-    EVENT_OCCASSIONS = 'Events and Occassions'
+    EVENT_OCCASSIONS = 'Events and Occasions'
     TRENDING = 'Trending',
     BAG = 'Bag'
 
 
     category_map = {
         1 => SHOES,
-        2 => CLOTHING,
+        2 => All_CLOTHING,
         3 => ACCESSORIES,
         4 => KIDS_BABY,
         5 => ALL_GENDERS,

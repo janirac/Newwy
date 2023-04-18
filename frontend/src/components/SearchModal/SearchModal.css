@@ -60,7 +60,7 @@
 .popular-section {
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 420px;
 }
 
 .popular-search-buttons {

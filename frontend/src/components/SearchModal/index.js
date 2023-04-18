@@ -36,13 +36,11 @@ function SearchModal() {
     }
 
     const popularSearches = [
-        "VINTAGE", 
-        "SWIMWEAR", 
+        "VINTAGE",  
         "DRESSES", 
         "TRENDING", 
         "HOT STUFF", 
-        "OUTERWEAR", 
-        "ACCESSORIES"
+        "OUTERWEAR"
     ]
 
     return (

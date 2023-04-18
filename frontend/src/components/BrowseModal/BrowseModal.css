@@ -45,6 +45,7 @@
     background: white;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .main-browse {

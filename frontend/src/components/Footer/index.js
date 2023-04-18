@@ -21,14 +21,14 @@ function Footer() {
                     <h4 className='footer-headers'>
                         Explore
                     </h4>
-                    <p className='footer-section-text'>about project</p>
+                    <a href='https://github.com/janirac/Newwy'target="_blank" rel="noopener noreferrer" className='footer-section-text'>about project</a>
                 </div>    
-                <div className='footer-sections'>
+                {/* <div className='footer-sections'>
                     <h4 className='footer-headers'>
                         Help
                     </h4>
                     <p className='footer-section-text'>FAQs</p>
-                </div>    
+                </div>     */}
                 <div className='footer-sections'>
                     <h4 className='footer-headers'>
                         About Newwy
@@ -43,9 +43,9 @@ function Footer() {
                     <h4 className='footer-headers'>
                         Stay Connected
                         <div className='footer-personal-links'>
-                            <a href="https://github.com/janirac"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/janira-crispin-396656a9/"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:janiracrispin@gmail.com"><i class="fas fa-envelope"></i></a>
+                            <a href="https://github.com/janirac" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/janira-crispin-396656a9/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:janiracrispin@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
                         </div>
                     </h4>
                 </div> 

@@ -14,6 +14,7 @@ function BrowseModal() {
     }
 
     const handleOnClick = (e) => {
+        debugger
         setCategory(e.target.value)
         history.push(`/search?query=${e.target.value}`)
         setShowModal(false)
@@ -40,8 +41,8 @@ function BrowseModal() {
                     <button value="Men" className="browse-category-btn" onClick={handleOnClick}>
                         Men
                     </button>
-                    <button value="Kids + Baby" className="browse-category-btn" onClick={handleOnClick}>
-                        Kids + Baby
+                    <button value="Trending" className="browse-category-btn" onClick={handleOnClick}>
+                        Trending
                     </button>
                 </div>
             {category ? <SearchResults category={category}/> : " "}

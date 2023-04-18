@@ -1,5 +1,5 @@
 const SHOES = 'Shoes'
-const CLOTHING = 'Clothing'
+const ALL_CLOTHING = 'ALL Clothing'
 const ACCESSORIES = 'Accessories'
 const KIDS_BABY = 'Kids + Baby'
 const ALL_GENDERS = 'All Genders'
@@ -19,14 +19,14 @@ const ACTIVEWEAR = 'Activewear'
 const SWIMWEAR = 'Swimwear'
 const COSTUMES = 'Costumes'
 const HOT_STUFF = 'Hot Stuff'
-const EVENT_OCCASSIONS = 'Events and Occassions'
+const EVENT_OCCASSIONS = 'Events and Occasions'
 const TRENDING = 'Trending'
 const BAG = 'Bag'
 
 
 export const categoryMap = {
     1: SHOES,
-    2: CLOTHING,
+    2: ALL_CLOTHING,
     3: ACCESSORIES,
     4: KIDS_BABY,
     5: ALL_GENDERS,
