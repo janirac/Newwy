@@ -3,11 +3,12 @@ import { useSelector } from "react-redux"
 import "./Cart.css"
 import { exitModalIcon } from "../Navigation"
 import { useHistory } from "react-router-dom"
+import { getProduct } from "../../store/product"
 
 const CartItems = ({ setShowCart }) => {
     const cartItems = useSelector(state => Object.values(state.cartItems))
     const history = useHistory()
-
+    
     const handleOnClick = (e) => {
         e.preventDefault()
         setShowCart(false)
@@ -43,8 +44,9 @@ const CartItems = ({ setShowCart }) => {
                 }
             </ul>
             <div className="bottom-cart">
-                <div>
+                <div className="subtotal-cart">
                     <h2 className="bottom-cart-txt">Subtotal</h2>
+                    <h2>TBD</h2>
                 </div>
                 <button onClick={handleOnClick} className="checkout-btn">Checkout</button>
             </div>

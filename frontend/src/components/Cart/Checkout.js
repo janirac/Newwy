@@ -1,14 +1,23 @@
-import { useSelector } from "react-redux"
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { deleteCartItem } from "../../store/cartItems"
 import "./Cart.css"
 import CartItemCard from "./CartItem"
+
 function Checkout() {
     const cartItems = useSelector(state => Object.values(state.cartItems))
+    const [paid, setPaid] = useState(false)
+    const dispatch = useDispatch()
 
     const handleSubmit = () => {
-        
+        cartItems.map(cartItem => {
+            dispatch(deleteCartItem(cartItem.id))
+        })
+        setPaid(true)
     }
 
     return (
+        !paid ? 
         <div className="checkout-main">
             <div className="checkout-headers">
                 <p>Checkout with newwy</p>
@@ -51,12 +60,15 @@ function Checkout() {
                         </div>
                     </div>
                     <div>
-                        <button onSubmit={handleSubmit} className="confirm-btn">Confirm + Pay</button>
+                        <button onClick={handleSubmit} className="confirm-btn">Confirm + Pay</button>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        </div> : 
+            <div className="confirmation-page">
+                Thank You For Shopping With Us
+            </div>
+    ) 
 }
 
 export default Checkout

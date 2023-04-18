@@ -27,11 +27,7 @@ function ProductShowPage() {
     const product = useSelector(getProduct(productId))
     const cart = useSelector(getCart())
     const cartItems = useSelector(state => Object.values(state.cartItems))
-    const cartItemsObj = useSelector(state => state.cartItems)
-const history = useHistory()
-
-
-    // const favoriteProductId = useSelector(state => state.)\\
+    const history = useHistory()
     
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -77,7 +73,7 @@ const history = useHistory()
                     <div className="product-info-label">
                         <div className="product-seller-info">
                             <div className="profile-photo-username">
-                                <img className='img-dropdown-profile-photo' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/>
+                                <img className='img-dropdown-profile-photo' src="https://newwy-seeds.s3.us-east-2.amazonaws.com/Concept+1-3.jpg"/>
                                 <p>{sessionUser ? sessionUser.email : product.brand}</p>
                             </div>
                         </div>
