@@ -55,7 +55,7 @@ function LoginFormPage() {
 
   return (
     <div className='login-page-main'>
-     <img className='img-login' src="https://via.placeholder.com/100"/>
+     <img className='img-login' src="https://newwy-seeds.s3.us-east-2.amazonaws.com/Concept+1-3.jpg"/>
         <h3 className='text-one-login'>
         Already Have an Account?
         </h3>

@@ -28,7 +28,7 @@ function BrowseModal() {
                     <button onClick={handleClick} className="exit-btn-browse">{exitModalIcon}</button>
                 </div>
                 <div className="browse-photo">
-
+                    <img  className="img-browse-photo" src="https://newwy-seeds.s3.us-east-2.amazonaws.com/dylann-hendricks-v_mk4MA53fo-unsplash.jpg" />
                 </div>
                 <div className="button-section-browse">
                     <button value="All Clothing" className="browse-category-btn" onClick={handleOnClick}>

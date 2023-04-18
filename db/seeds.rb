@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 # db/seeds.rb
 require "open-uri"
+# require "aws-sdk-s3"
+
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
@@ -401,297 +403,302 @@ ApplicationRecord.transaction do
     puts "Creating Product Images"
    ProductImage.create!(
         product_id: 1,
-        image_url: "https://i.ibb.co/ZSQ0478/Vintage-Black-Corset-Dress-with-Gold-Detail.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Vintage+Black+Corset+Dress+with+Gold+Detail.jpeg"
     )
    ProductImage.create!(
         product_id: 1,
-        image_url: "https://i.ibb.co/WNCjB8X/Vintage-Black-Corset-Dress-with-Gold-Detail2.jpg" 
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Vintage+Black+Corset+Dress+with+Gold+Detail2.jpeg" 
     )
    ProductImage.create!(
         product_id: 1,
-        image_url: "https://i.ibb.co/Sv3tvLc/Vintage-Black-Corset-Dress-with-Gold-Detail3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Vintage+Black+Corset+Dress+with+Gold+Detail3.jpeg"
     )
 
    ProductImage.create!(
         product_id: 1,
-        image_url: "https://i.ibb.co/dt2Fpym/Vintage-Black-Corset-Dress-with-Gold-Detail4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Vintage+Black+Corset+Dress+with+Gold+Detail4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 4,
-        image_url: "https://i.ibb.co/k4zxXc9/Suede-Moto-Jacket.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Suede+Moto+Jacket.jpeg"
     )
     
    ProductImage.create!(
         product_id: 4,
-        image_url: "https://i.ibb.co/ThfVZYb/Suede-Moto-Jacket2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Suede+Moto+Jacket2.jpeg"
     )
     
    ProductImage.create!(
         product_id: 4,
-        image_url: "https://i.ibb.co/LNXkgDV/Suede-Moto-Jacket3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Suede+Moto+Jacket3.jpeg"
     )
 
    ProductImage.create!(
         product_id: 4,
-        image_url: "https://i.ibb.co/ydk26Qs/Suede-Moto-Jacket4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Suede+Moto+Jacket4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 2,
-        image_url: "https://i.ibb.co/98MV64s/Patchwork-Halter-Tank.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Patchwork+Halter+Tank.jpeg"
     )
     
    ProductImage.create!(
         product_id: 2,
-        image_url: "https://i.ibb.co/rwzR4L1/Patchwork-Halter-Tank2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Patchwork+Halter+Tank2.jpeg"
     )
     
    ProductImage.create!(
         product_id: 2,
-        image_url: "https://i.ibb.co/S757nLT/Patchwork-Halter-Tank3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Patchwork+Halter+Tank3.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 3,
-        image_url: "https://i.ibb.co/3s6fHHb/Striped-Sweater-Vest2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Striped+Sweater+Vest.jpeg"
     )
 
    ProductImage.create!(
         product_id: 3,
-        image_url: "https://i.ibb.co/BKmvFW8/Striped-Sweater-Vest.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Striped+Sweater+Vest2.jpeg"
     )
 
    ProductImage.create!(
         product_id: 3,
-        image_url: "https://i.ibb.co/p0gvj8G/Striped-Sweater-Vest4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Striped+Sweater+Vest3.jpeg"
     )
 
    ProductImage.create!(
         product_id: 3,
-        image_url: "https://i.ibb.co/3v5gx8K/Striped-Sweater-Vest3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Striped+Sweater+Vest4.jpeg"
     )
 
    ProductImage.create!(
         product_id: 5,
-        image_url: "https://i.ibb.co/jR48Qqc/Pinstriped-Joe-s-Jeans-Flares.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Pinstriped+Joe's+Jeans+Flares.jpeg"
     )
     
    ProductImage.create!(
         product_id: 5,
-        image_url: "https://i.ibb.co/SrFX8rD/Pinstriped-Joe-s-Jeans-Flares2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Pinstriped+Joe's+Jeans+Flares2.jpeg"
     )
     
    ProductImage.create!(
         product_id: 5,
-        image_url: "https://i.ibb.co/6smchYm/Pinstriped-Joe-s-Jeans-Flares3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Pinstriped+Joe's+Jeans+Flares3.jpeg"
     )
     
    ProductImage.create!(
         product_id: 5,
-        image_url: "https://i.ibb.co/VBdffZK/Pinstriped-Joe-s-Jeans-Flares4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Pinstriped+Joe's+Jeans+Flares4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 6,
-        image_url: "https://i.ibb.co/KbR7bDR/Gia-Denim-Skirt.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/GiaDenimSkirt.jpeg"
     )
     
    ProductImage.create!(
         product_id: 6,
-        image_url: "https://i.ibb.co/1LgKTW9/Gia-Denim-Skirt1.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/GiaDenimSkirt1.jpeg"
     )
 
    ProductImage.create!(
         product_id: 6,
-        image_url: "https://i.ibb.co/ZXkKBYJ/Gia-Denim-Skirt4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/GiaDenimSkirt3.jpeg"
     )
     
    ProductImage.create!(
         product_id: 6,
-        image_url: "https://i.ibb.co/Zgcv2Jk/Gia-Denim-Skirt3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/GiaDenimSkirt4.jpeg"
     )
 
 
     ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/3FKXx41/guess1.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/guess1.jpeg"
     )
 
    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/SrpJ7Df/guess3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/guess2.jpeg"
     )
 
    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/GxrnVtB/guess4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/guess3.jpeg"
     )
 
    ProductImage.create!(
         product_id: 9,
-        image_url: "https://i.ibb.co/GxrnVtB/guess4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/guess4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 8,
-        image_url: "https://i.ibb.co/Gp0RLFd/1.jpg" 
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/FastandFreeHighRiseTight.jpeg" 
     )
 
    ProductImage.create!(
         product_id: 8,
-        image_url: "https://i.ibb.co/51Yy8yW/2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/FastandFreeHighRiseTight2.jpeg"
     )
 
    ProductImage.create!(
         product_id: 8,
-        image_url: "https://i.ibb.co/kq36wQt/3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/FastandFreeHighRiseTight3.jpeg"
     )
 
    ProductImage.create!(
         product_id: 8,
-        image_url: "https://i.ibb.co/sWQ1cLp/4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/FastandFreeHighRiseTight4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 7,
-        image_url: "https://i.ibb.co/QHnW6jk/Levis505-Shorts2.jpg" 
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Levis505Shorts.jpeg" 
     )
     
 
    ProductImage.create!(
         product_id: 7,
-        image_url: "https://i.ibb.co/jWF4Xwm/Levis505-Shorts.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Levis505Shorts2.jpeg"
     )
     
 
    ProductImage.create!(
         product_id: 7,
-        image_url: "https://i.ibb.co/kxdqCC6/Levis505-Shorts3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Levis505Shorts3.jpeg"
     )
     
    ProductImage.create!(
         product_id: 7,
-        image_url: "https://i.ibb.co/mbzhf0R/Levis505-Shorts4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/Levis505Shorts4.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 10,
-        image_url: "https://i.ibb.co/ctV9Jj0/1danielle.jpg" 
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/1danielle.jpeg" 
     )
     
 
    ProductImage.create!(
         product_id: 10,
-        image_url: "https://i.ibb.co/QcJwhGh/danielle2.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/danielle2.jpeg"
     )
     
 
    ProductImage.create!(
         product_id: 10,
-        image_url: "https://i.ibb.co/VvSqWFt/danielle3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/danielle3.jpeg"
+    )
+
+   ProductImage.create!(
+        product_id: 10,
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/danielle4.jpeg"
     )
     
    
    ProductImage.create!(
         product_id: 11,
-        image_url: "https://i.ibb.co/dLRxbRv/1.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/1.jpeg"
     )
    ProductImage.create!(
         product_id: 11,
-        image_url: "https://i.ibb.co/rtby5K2/2jpeg.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/2jpeg.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 12,
-        image_url: "https://i.ibb.co/n74df31/3.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/3.jpeg"
     )
    ProductImage.create!(
         product_id: 12,
-        image_url: "https://i.ibb.co/VV8S6Qc/6.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/6.jpeg"
     )
    ProductImage.create!(
         product_id: 12,
-        image_url: "https://i.ibb.co/ZLSSSvs/5.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/5.jpeg"
     )
    ProductImage.create!(
         product_id: 12,
-        image_url: "https://i.ibb.co/NCLpFsN/4.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/4.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 13,
-        image_url: "https://i.ibb.co/0tty18M/12.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/10.jpeg"
     )
    ProductImage.create!(
         product_id: 13,
-        image_url: "https://i.ibb.co/THSXy8y/10.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/9.jpeg"
     )
    ProductImage.create!(
         product_id: 13,
-        image_url: "https://i.ibb.co/588zC8K/9.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/8.jpeg"
     )
    ProductImage.create!(
         product_id: 13,
-        image_url: "https://i.ibb.co/f0WCP1g/7.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/7.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 14,
-        image_url: "https://i.ibb.co/yqHnqN3/14.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/13.jpeg"
     )
    ProductImage.create!(
         product_id: 14,
-        image_url: "https://i.ibb.co/5rNtRcr/13.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/14.jpeg"
     )
    ProductImage.create!(
         product_id: 14,
-        image_url: "https://i.ibb.co/wQrDcNy/15.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/15.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 15,
-        image_url: "https://i.ibb.co/SXWsYJ8/20jpeg.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/20jpeg.jpeg"
     )
    ProductImage.create!(
         product_id: 15,
-        image_url: "https://i.ibb.co/8Xp7Mvs/19.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/19.jpeg"
     )
    ProductImage.create!(
         product_id: 15,
-        image_url: "https://i.ibb.co/fSm0HLy/18.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/18.jpeg"
     )
    ProductImage.create!(
         product_id: 15,
-        image_url: "https://i.ibb.co/FJXH5Yq/17jpeg.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/17jpeg.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 16,
-        image_url: "https://i.ibb.co/HCjk6rm/21.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/21.jpeg"
     )
    ProductImage.create!(
         product_id: 16,
-        image_url: "https://i.ibb.co/KbGmLnV/22.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/22.jpeg"
     )
    ProductImage.create!(
         product_id: 16,
-        image_url: "https://i.ibb.co/bW534GB/23.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/23.jpeg"
     )
 
 
@@ -699,121 +706,122 @@ ApplicationRecord.transaction do
 
    ProductImage.create!(
         product_id: 17,
-        image_url: "https://i.ibb.co/GCnYML8/29.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/29.jpeg"
     )
    ProductImage.create!(
         product_id: 17,
-        image_url: "https://i.ibb.co/kXTxxX6/28.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/28.jpeg"
     )
    ProductImage.create!(
         product_id: 17,
-        image_url: "https://i.ibb.co/rmPhk8Z/27.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/27.jpeg"
     )
    ProductImage.create!(
         product_id: 17,
-        image_url: "https://i.ibb.co/jRffnq0/26.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/26.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 18,
-        image_url: "https://i.ibb.co/nMtfNT4/30.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/30.jpeg"
     )
    ProductImage.create!(
         product_id: 18,
-        image_url: "https://i.ibb.co/zry0jLD/31.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/31.jpeg"
     )
    ProductImage.create!(
         product_id: 18,
-        image_url: "https://i.ibb.co/cF6d8Qp/32.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/32.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 19,
-        image_url: "https://i.ibb.co/vwpWYLn/34.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/34.jpeg"
     )
    ProductImage.create!(
         product_id: 19,
-        image_url: "https://i.ibb.co/ctWR2tN/35.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/35.jpeg"
     )
    ProductImage.create!(
         product_id: 19,
-        image_url: "https://i.ibb.co/4T30tL0/36.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/36.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 20,
-        image_url: "https://i.ibb.co/yk5VPGS/38.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/38.jpeg"
     )
    ProductImage.create!(
         product_id: 20,
-        image_url: "https://i.ibb.co/8jJrkzg/37.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/37.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 21,
-        image_url: "https://i.ibb.co/8bwTHQd/40.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/40.jpeg"
     )
    ProductImage.create!(
         product_id: 21,
-        image_url: "https://i.ibb.co/48DrVFp/41.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/41.jpeg"
     )
    ProductImage.create!(
         product_id: 21,
-        image_url: "https://i.ibb.co/y8rtqLP/42.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/42.jpeg"
     )
 
 
    ProductImage.create!(
         product_id: 22,
-        image_url: "https://i.ibb.co/w49TV1Q/47.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/44.jpeg"
     )
    ProductImage.create!(
         product_id: 22,
-        image_url: "https://i.ibb.co/0Mrwt2B/46.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/45.jpeg"
     )
    ProductImage.create!(
         product_id: 22,
-        image_url: "https://i.ibb.co/yq0wM7N/45.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/46.jpeg"
     )
    ProductImage.create!(
         product_id: 22,
-        image_url: "https://i.ibb.co/SfJT4v2/44.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/47.jpeg"
     )
 
 
 
    ProductImage.create!(
         product_id: 23,
-        image_url: "https://i.ibb.co/tYs5bTF/49.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/49.jpeg"
     )
    ProductImage.create!(
         product_id: 23,
-        image_url: "https://i.ibb.co/Jj7Dqx1/50.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/50.jpeg"
     )
+
 
    ProductImage.create!(
         product_id: 24,
-        image_url: "https://i.ibb.co/tYs5bTF/49.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/49.jpeg"
     )
    ProductImage.create!(
         product_id: 24,
-        image_url: "https://i.ibb.co/Jj7Dqx1/50.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/50.jpeg"
     )
     
    ProductImage.create!(
         product_id: 25,
-        image_url: "https://i.ibb.co/tYs5bTF/49.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/49.jpeg"
     )
    ProductImage.create!(
         product_id: 25,
-        image_url: "https://i.ibb.co/Jj7Dqx1/50.jpg"
+        image_url: "https://newwy-seeds.s3.us-east-2.amazonaws.com/50.jpeg"
     )
 
 

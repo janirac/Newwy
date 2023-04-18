@@ -34,7 +34,7 @@ function Favorites() {
             <div className='profile-btn-main'>
                     <NavLink className='profile-btn-main-link' to='/profile'>
                     <button className='profile-btn-home'>
-                        <img className='img-dropdown' src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png"/> 
+                        <img className='img-dropdown' src="https://newwy-seeds.s3.us-east-2.amazonaws.com/Concept+1-3.jpg"/> 
                         <div className='profile-btn-view'>
                         <h4 className='profile-name'>{sessionUser.email}</h4>
                         </div>
@@ -63,7 +63,7 @@ function Favorites() {
                 <div className='likes-link'></div>
             </div>
             <div className='user-profile'>
-                <img src="https://i.ibb.co/GVw3f6F/silk-reine-inline.png" alt="silk-reine-inline" className='pic-for-profile'/>
+                <img src="https://newwy-seeds.s3.us-east-2.amazonaws.com/Concept+1-3.jpg" alt="silk-reine-inline" className='pic-for-profile'/>
                 <div className='username-profile'>{sessionUser.email}</div>
             </div>
             <div className='favorite-product-card-container'>
