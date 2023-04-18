@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getProduct } from "../../store/product";
 import { useParams } from "react-router-dom";
 import './Reviews.css'
-
+ 
 function ReviewShow(){
     const dispatch = useDispatch()
     const { productId } = useParams()
