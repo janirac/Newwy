@@ -8,13 +8,17 @@ function Checkout() {
     const cartItems = useSelector(state => Object.values(state.cartItems))
     const [paid, setPaid] = useState(false)
     const dispatch = useDispatch()
+    const ordersArray = []
 
     const handleSubmit = () => {
         cartItems.map(cartItem => {
+            ordersArray.push(cartItem)
             dispatch(deleteCartItem(cartItem.id))
         })
         setPaid(true)
     }
+    
+    console.log(ordersArray)
 
     return (
         !paid ? 

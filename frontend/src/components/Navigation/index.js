@@ -118,7 +118,7 @@ function Navigation() {
                 </NavLink>
               </div>
               <div className='orders-btn-main'>
-                <NavLink className='orders-btn-main-link' to="/">
+                <NavLink className='orders-btn-main-link' to="/futurefeature">
                   <button onClick={handleDropdownClicks} className='orders-btn'>
                     {checklistIcon}
                     <text className='orders-text'>Orders</text>
@@ -126,7 +126,7 @@ function Navigation() {
                 </NavLink>
               </div>
               <div className='settings-btn-main'>
-                <NavLink to='/'>
+                <NavLink to='/futurefeature'>
                   <button onClick={handleDropdownClicks} className='settings-btn'>
                     {settingsIcon}
                     <text className='settings-text'>Settings</text>

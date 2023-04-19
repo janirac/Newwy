@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import Loading from "./components/Loading/loading";
 import SearchResults from "./components/SearchResults";
 import Checkout from "./components/Cart/Checkout";
+import FutureFeatures from "./components/FutureFeature";
 
 function App() {
   
@@ -66,6 +67,9 @@ function App() {
             </Route>
             <Route path="/checkout">
               <Checkout />
+            </Route>
+            <Route path="/futurefeature">
+              <FutureFeatures />
             </Route>
           </Switch>
           {locationLoginOrSignUp && <Footer />}

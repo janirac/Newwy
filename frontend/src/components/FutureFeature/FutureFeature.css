@@ -1,0 +1,10 @@
+.future-implementation {
+    font-size: 100px;
+    margin: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35vh;
+    width: 100%;
+    margin-left: 135px;
+}
