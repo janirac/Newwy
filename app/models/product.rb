@@ -25,7 +25,6 @@ class Product < ApplicationRecord
         dependent: :destroy
     has_one :category, 
         dependent: :destroy
-    # belongs_to :user
 
     has_many :cart_items, 
         dependent: :destroy
@@ -49,7 +48,6 @@ class Product < ApplicationRecord
     end 
 
     def images(product_id)
-        # @product = Product.find(id)
         @images = ProductImage.where(product_id: product_id)
     end 
 

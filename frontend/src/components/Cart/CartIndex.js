@@ -3,17 +3,29 @@ import { useSelector } from "react-redux"
 import "./Cart.css"
 import { exitModalIcon } from "../Navigation"
 import { useHistory } from "react-router-dom"
-import { getProduct } from "../../store/product"
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min"
+import { useEffect, useState } from "react"
 
 const CartItems = ({ setShowCart }) => {
     const cartItems = useSelector(state => Object.values(state.cartItems))
     const history = useHistory()
+    const location = useLocation()
+    const [previousLocation, setPreviousLocation] = useState(null)
+    const [totalPrice, setTotalPrice] = useState(0)
     
     const handleOnClick = (e) => {
         e.preventDefault()
         setShowCart(false)
         history.push(`/checkout`)
     }
+
+    useEffect(() => {
+        if (previousLocation !== null && location.pathname !== previousLocation.pathname) {
+          setShowCart(false)
+        }
+    
+        setPreviousLocation(location);
+    }, [location]);
 
     if (cartItems.length === 0) {
         return (
@@ -40,7 +52,7 @@ const CartItems = ({ setShowCart }) => {
             </div>
             <ul className="cart-item-list">
                 {
-                    cartItems.map(cartItem => <CartItemCard cartItem={cartItem}/>)
+                    cartItems.map(cartItem => <CartItemCard totalPrice={totalPrice} setTotalPrice={setTotalPrice} cartItem={cartItem}/>)
                 }
             </ul>
             <div className="bottom-cart">

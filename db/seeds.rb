@@ -49,7 +49,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #1
       name: "Vintage Black Corset Dress with Gold Detail",
-      price: 100.00,
+      price: 100,
       description: "Beautiful corset vintage dress perfect for a wedding or event!
       The dress was designed in Paris and has a corseted body and adjustable straps (pictured)
       It`s a French 38. It`s fits me and I`m a Small/Medium.",
@@ -75,7 +75,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #3
       name: "Striped Sweater Vest",
-      price: 75.00,
+      price: 75,
       description: "The thoughtfully designed pieces from Anthropologie surprise, delight and tell stories—of a 
       collaborative, inventive community of women savoring every adventure and seeking beauty wherever they go.
       18.25L
@@ -86,12 +86,12 @@ ApplicationRecord.transaction do
       color: "Purple",
       condition: "Used",
       brand: "Anthropologie",
-      original_price: 98.00
+      original_price: 98
     )
 
     Product.create!( #4
       name: "Suede Moto Jacket",
-      price: 65.00,
+      price: 65,
       description: "Worn once or twice. Perfect condition. Silver details. Comes with belt. 
       Nice heavy suede. I accept reasonable offers :)",
       amount: 1,
@@ -99,12 +99,12 @@ ApplicationRecord.transaction do
       condition: "Like New",
       brand: "Topshop",
       size: 8,
-      original_price: 400.00
+      original_price: 400
     )
 
     Product.create!( #5
       name: "Pinstriped Joe's Jeans Flares",
-      price: 60.00,
+      price: 60,
       description: "Pinstriped/railroad striped Joe`s Jeans in like new condition. These are from my college days and I didn`t wear very often. 
       Bright light blue wash with flare leg. Long 32.5 inch inseam. Size 29 but run small for today. I wear between 28-29 in modern jeans and I 
       couldn`t quite button these. 15 inches lying flat across waist. 18 inches across hips (measured flat at bottom of zipper) Lower 8.5 inch rise. 
@@ -130,12 +130,12 @@ ApplicationRecord.transaction do
       color: "Grey",
       condition: "Used",
       brand: "AGOLDE",
-      original_price: 128.00
+      original_price: 128
     )
 
     Product.create!( #7
       name: "Levi's 505 Shorts",
-      price: 55.00,
+      price: 55,
       description: "26” the perfect Levi’s staple piece to have in your closet! 
       Perfect condition",
       amount: 1,
@@ -143,12 +143,12 @@ ApplicationRecord.transaction do
       condition: "Like New",
       brand: "Levi's",
       size: "26",
-      original_price: 120.00
+      original_price: 120
     )
 
     Product.create!( #8
       name: "Fast and Free High-Rise Tight",
-      price: 70.00,
+      price: 70,
       description: "Black, pockets on side, zipper pocket No stains",
       amount: 1,
       color: "Black",
@@ -159,7 +159,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #9
       name: "Vintage Guess High Waisted Cut Off Shorts",
-      price: 60.00,
+      price: 60,
       description: "Tag marked size 30 100% cotton Soft and velvety ! Late 80s/early 90s era
       As with all vintage clothing, it is expected that each item may have a little bit and 
       even excessive amounts of wear. It all adds to the charm of the garment. 
@@ -174,7 +174,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #10
       name: "UO Danielle Patchwork Linen Coverall Jumpsuit",
-      price: 99.00,
+      price: 99,
       description: "Perfectly pieced together coverall from UO. Long sleeve silhouette made 
       from a lightweight linen blend with a loose fit and zip-front closure. Finished with 
       workwear accents at the straight leg, a pointed collar and pockets at the chest.
@@ -190,7 +190,7 @@ ApplicationRecord.transaction do
       condition: "New With Tags",
       brand: "Urban Outfitters",
       size: "XS",
-      original_price: 149.00
+      original_price: 149
     )
 
 
@@ -198,7 +198,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #11
       name: "Vince Camuto Leather Shoulder Bag",
-      price: 98.00,
+      price: 98,
       description: "New without tags. Zippers up side, immaculate condition.",
       amount: 1,
       color: "Brown",
@@ -209,19 +209,19 @@ ApplicationRecord.transaction do
     )
     Product.create!( #12
       name: "Steve Madden Idina",
-      price: 100.00,
+      price: 100,
       description: "Brand new. Size 8. Runs small. Green crocodile print. Synthetic material",
       amount: 1,
       color: "Green",
       condition: "New With Tags",
       brand: " Steve Madden",
       size: "8",
-      original_price: 189.00
+      original_price: 189
     )
 
     Product.create!( #13
       name: "Kentsa Suede Ankle Boot",
-      price: 90.00,
+      price: 90,
       description: "A retro-inspired lift and sleek lines combine with flawless detail in the gorgeous Kentsa platform booties from Vince Camuto.
       3-1/3″ block heel; 1″ platform Round-toe platform dress booties with inner ankle zipper closure Overlay at vamp Suede uppers",
       amount: 1,
@@ -229,12 +229,12 @@ ApplicationRecord.transaction do
       condition: "Like New",
       brand: " Vince Camuto",
       size: "11",
-      original_price: 180.00
+      original_price: 180
     )
 
     Product.create!( #14
       name: "Gogo style black platform boots",
-      price: 80.00,
+      price: 80,
       description: "Black Dolce Vita vero cuoio platform boots - gogo style - zippers on both sides of the calf for comfortable fit
       Amazing condition - minimal usage wear
       Women’s size 7 true to size
@@ -249,58 +249,59 @@ ApplicationRecord.transaction do
 
     Product.create!( #15
       name: "Polo Navy Collared Shirt",
-      price: 85.00,
+      price: 85,
       description: "Brand new, clean and in mint condition!!",
       amount: 1,
       color: "Blue",
       condition: "Like New",
       brand: "Polo Ralph Lauren",
       size: "M",
-      original_price: 120.00
+      original_price: 120
     )
 
     Product.create!( #16
       name: "True Religion Blue Joggers",
-      price: 90.00,
+      price: 90,
       description: "True Religion Blue Joggers NWT Size S This Classic True Religion Jogger is perfect for non denim days. Designed from a comfy cotton blend, this men's jogger style sweatpant features an elasticized drawstring waistband, hip pockets, back pocket, and a tapered ankle. Elastic waistband Tapered Ankle Machine Wash 88% cotton, 12% polyester",
       amount: 1,
       color: "Blue",
       condition: "New With Tags",
       brand: "True Religion",
       size: "S",
-      original_price: 100.00
+      original_price: 100
     )
 
 
     Product.create!( #17
       name: "Pleasure graphic pants",
-      price: 55.00,
+      price: 55,
       description: "Size 34, never worn from pleasures",
       amount: 1,
       color: "White",
       condition: "New With Tags",
       brand: "Other / Unknown",
       size: "34",
-      original_price: 120.00
+      original_price: 120
     )
 
 
     Product.create!( #18
       name: "Inis Crafts Wool Fisherman Sweaters",
-      price: 69.00,
+      price: 69,
       description: "100%Wool cable knit turtleneck Great condition",
       amount: 1,
       color: "Beige",
       condition: "Like New",
       brand: "Other / Unknown",
       size: "XL",
-      original_price: 300.00
+      original_price: 300
     )
+    
 
 
     Product.create!( #19
       name: "The North Face Men's 1/4-Zip Fleece Jacket",
-      price: 70.00,
+      price: 70,
       description: "Size XL In great condition Red heather Stretch fleece with soft brushed back Reverse-coil zippered chest pocket",
       amount: 1,
       color: "Red",
@@ -312,7 +313,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #20
       name: "Spyder MENS HAZE USA GLORY DOWN JACKET",
-      price: 100.00,
+      price: 100,
       description: "Downproof Nylon Plain Weave with DWR Duck Down 600 Fill Reverse Coil center front zipper
       Show your U.S.A Pride year-round with the Eric Haze designed Glory Jacket. This 600 fill, responsibly sourced, duck down jacket is ideal for transitioning through the seasons or as an under layer on frigid days. A light durable water repellent exterior helps shed rain and the zippered hand pockets keep your items secure. From cheering on the best to looking your best, stay warm and in style with the Glory Jacket",
       amount: 1,
@@ -320,13 +321,13 @@ ApplicationRecord.transaction do
       condition: "New With Tags",
       brand: "Spyder",
       size: "XL",
-      original_price: 199.00
+      original_price: 199
     )
 
 
     Product.create!( #21
       name: "Vintage Etienne Aigner Blue Plaid Dress Shirt. Men’s size M-L",
-      price: 56.00,
+      price: 56,
       description: "Really nice light blue color. Subtle plaid. Logo on pocket. So many ways to wear and style.
       Best Fit: S-L Marked Size: 17 1/2 32/33 Color: Blue Material: 55% Cotton 45% Polyester Care: Machine Washable Condition: Good - minimal wear
       Measurements: Chest (measured pit to pit) - 26” Sleeve length (measured from underarm to sleeve hem) - 19” Length (measured from front shoulder to hem) - 29.5”
@@ -341,7 +342,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #22
       name: "Vintage Nike Burgundy Quarter Zip Windbreaker",
-      price: 70.00,
+      price: 70,
       description: "True 90's vintage, deep maroon pull over style windbreaker jacket. Features large embroidered center check logo, a zipper kangaroo pocket, and small Nike Air logo on back.
       • Labeled a men’s large; fits super oversized and relaxed. Would work for up to an XXL • 100% nylon shell
       Excellent gently used condition with no notable flaws
@@ -357,7 +358,7 @@ ApplicationRecord.transaction do
 
     Product.create!( #23
       name: "Vintage trench / overcoat cargo pockets",
-      price: 55.00,
+      price: 55,
       description: "Lightweight trench / overcoat with cargo pockets 
       I would wear this with vintage baggy denim and a crop top, a cute polo and trousers or chinos and a graphic tee",
       amount: 1,
@@ -365,7 +366,7 @@ ApplicationRecord.transaction do
       condition: "Used",
       brand: "Other / Unknown",
       size: "L",
-      original_price: 55.00
+      original_price: 55
     )
 
 
@@ -381,7 +382,7 @@ ApplicationRecord.transaction do
       condition: "Used",
       brand: " Lucky Brand",
       size: "XL",
-      original_price: 149.00
+      original_price: 149
     )
 
 
@@ -397,7 +398,7 @@ ApplicationRecord.transaction do
       condition: "Used ",
       brand: "RAHI",
       size: "S",
-      original_price: 107.00
+      original_price: 107
     )
     
     puts "Creating Product Images"

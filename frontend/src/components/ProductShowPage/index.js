@@ -7,8 +7,6 @@ import Favorites from "../Favorites";
 import { getCart } from "../../store/cart";
 import { getProduct } from "../../store/product";
 import "./ProductShowPage.css"
-// import CartItems from "../Cart/CartIndex";
-// import { createCartItem } from "../../store/cart";
 import { createCartItem } from "../../store/cartItems";
 import { fetchCart } from "../../store/cart";
 import ReviewShow from "../Reviews/ReviewIndex";
@@ -79,7 +77,7 @@ function ProductShowPage() {
                         </div>
                         <div className="product-title-price-size">
                             <div className="product-name">{product.name}</div>
-                            <div className="product-price">${product.price}</div>
+                            <div className="product-price">${parseFloat(product.price).toFixed(2)}</div>
                             <div className="size">Size: {product.size}</div>
                         </div>
                     </div>

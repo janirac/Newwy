@@ -33,7 +33,7 @@ function SearchResults({category}) {
     if(filteredProducts.length === 0) {
         return (
             <div className="container-search-results">
-            
+                Sorry, No Results Found For "{query}""
             </div>
         )
     }

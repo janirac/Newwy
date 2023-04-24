@@ -3,13 +3,18 @@ import { getProduct } from "../../store/product"
 import { deleteCartItem, fetchCartItems } from "../../store/cartItems"
 import { useEffect } from "react"
 
-const CartItemCard = ( { cartItem } ) => {
+const CartItemCard = ( { totalPrice, setTotalPrice, cartItem } ) => {
     const dispatch = useDispatch()
     const productId = cartItem.productId
     const product = useSelector(getProduct(productId))
 
+    // useEffect(() => {
+    //     setTotalPrice(prevTotalPrice => prevTotalPrice + parseFloat(product.price))
+    // }, [product.price])
+
     const handleClick = (e) => {
         e.preventDefault()
+        // setTotalPrice(prevTotalPrice => prevTotalPrice - parseFloat(product.price))
         dispatch(deleteCartItem(cartItem.id))
     }
 
@@ -29,7 +34,7 @@ const CartItemCard = ( { cartItem } ) => {
                     <div>{product.name}</div>
                     <div>{product.size}</div>
                     <div>{product.condition}</div>
-                    <div>{product.price}</div>
+                    <div>${parseFloat(product.price)}</div>
                 </div>
             </div>
             <button className="cart-item-btn" onClick={handleClick}>Remove</button>

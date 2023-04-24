@@ -4,7 +4,7 @@ import { searchIcon } from "../Navigation"
 import { exitModalIcon } from "../Navigation"
 import "./SearchModal.css"
 
-function SearchModal() {
+function SearchModal({setShowSearchModal}) {
     const [searchWord, setSearchWord] = useState("")
     const [showModal, setShowModal] = useState(true)
     const [error, setError] = useState("")
@@ -20,19 +20,19 @@ function SearchModal() {
             if(searchWord.replace(/\s+/g, '') === ""){
                 setError("you searched for nothing! Try Again")
             } else {
-                setShowModal(false)
+                setShowSearchModal(false)
                 history.push(`/search?query=${searchWord}`)
             }
         }
     } 
 
     const handleOnClick = () => {
-        setShowModal(false)
+        setShowSearchModal(false)
         history.push(`/search?query=${searchWord}`)
     }
 
     const handleClick = () => {
-        setShowModal(false)
+        setShowSearchModal(false)
     }
 
     const popularSearches = [
@@ -75,7 +75,7 @@ function SearchModal() {
                             <button 
                             className="popular-search-buttons"
                             onClick={() => {
-                                setShowModal(false)
+                                setShowSearchModal(false)
                                 history.push(`/search?query=${popularSearch}`)
                             }}>
                                 {popularSearch}

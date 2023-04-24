@@ -1,22 +1,33 @@
 import "./BrowseModal.css"
 import { exitModalIcon } from "../Navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import SearchResults from "../SearchResults"
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min"
 
-function BrowseModal() {
+function BrowseModal({setShowBrowseModal}) {
     const [showModal, setShowModal] = useState(true)
     const [category, setCategory] = useState("")
     const history = useHistory()
+    const location = useLocation()
+    const [previousLocation, setPreviousLocation] = useState(null)
+
+    useEffect(() => {
+        if (previousLocation !== null && location.pathname !== previousLocation.pathname) {
+          setShowBrowseModal(false)
+        }
+    
+        setPreviousLocation(location);
+    }, [location]);
 
     const handleClick = () => {
-        setShowModal(false)
+        setShowBrowseModal(false)
     }
 
     const handleOnClick = (e) => {
         setCategory(e.target.value)
         history.push(`/search?query=${e.target.value}`)
-        setShowModal(false)
+        setShowBrowseModal(false)
     }
 
     return (

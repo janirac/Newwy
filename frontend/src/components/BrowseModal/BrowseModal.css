@@ -8,6 +8,7 @@
     top: 0;
     border: 1px solid black;
     overflow: hidden;
+    cursor: default;
 }    
 
 .browse-modal-container.hide {
@@ -46,6 +47,10 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+.browse-category-btn:hover {
+    background-color: #f5efe9;
 }
 
 .main-browse {

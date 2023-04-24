@@ -57,6 +57,7 @@ function Navigation() {
   }
 
   const handleBrosweClick = (e) => {
+    debugger
     e.preventDefault()
     showBrowseModal ? setShowBrowseModal(false) : setShowBrowseModal(true)
   }
@@ -170,14 +171,14 @@ function Navigation() {
                 {browseIcon}
                 Browse
               </div>
-              {showBrowseModal ? <BrowseModal /> : " "}
+              {showBrowseModal && <BrowseModal setShowBrowseModal={setShowBrowseModal}/> }
             </div>
             <div className='search-link'>
               <div className='search-link-icon' onClick={handleSearchBarClick}>
                 {searchIcon}
                 Search
               </div>
-                {showSearchModal ? <SearchModal /> : " "}
+                {showSearchModal && <SearchModal setShowSearchModal={setShowSearchModal} />}
             </div>
         </div>
     )

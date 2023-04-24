@@ -36,7 +36,7 @@ function Checkout() {
                         <input className="input-text-checkout" placeholder="Street Address"/>
                     </div>
                     <div>
-                        <p>PAY WITH</p>
+                        {/* <p>PAY WITH</p> */}
                         {/* <img /> */}
                     </div>
                 </div>
